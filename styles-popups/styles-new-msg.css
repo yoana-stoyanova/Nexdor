@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'Bubble';
+    src: url('../../fonts/HussarBoldWebEdition-xq5O.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cyrillic';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cyrillic-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#popup-body {
+    display: flex;
+    background-color: rgba(43, 39, 66, 0.7);
+    font-family: 'Cyrillic';
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    z-index: 100;
+}
+
+#pop-up {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 75%;
+    height: 75%;
+    padding-top: 3%;
+    padding-bottom: 2%;
+    align-self: center;
+    color: #2B2742;
+    background-color: white;
+    border: #2B2742 3px solid;
+    border-radius: 10px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+}
+
+#X-icon {
+    z-index: 101;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 1%;
+    top: 10px;
+}
+
+#top {
+    position: absolute;
+    top: 0;
+    height: 43px;
+    width: 100%;
+    /* border: #2B2742 1px solid; */
+    background-color: #2B2742;
+}
+
+#top p {
+    color: white;
+    margin-left: 20px;
+    line-height: 0.5;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    width: 1100px;
+    align-self: center;
+    align-items: center;
+    padding-left: 1%;
+    border: #2B2742 2px solid;
+    border-radius: 3px;
+    background-color: rgb(225, 225, 225);
+}
+
+.label {
+    font-family: 'Cyrillic-Bold';
+    font-size: 20px;
+    margin-left: 1%;
+    margin-right: 25px;
+    line-height: 1;
+}
+
+input {
+    width: 91%;
+    height: 85%;
+    font-size: 21px;
+    font-family: "Calibri";
+    text-decoration: underline;
+    line-height: 1;
+    color: #2B2742;
+    background-color: rgb(225, 225, 225);
+    border: 0px;
+    outline: none;
+}
+
+select {
+    color: #2B2742;
+    background-color:  rgb(225, 225, 225);
+    border: 0px;
+    font-size: 21px;
+    font-family: "Calibri";
+    text-decoration: underline;
+    line-height: 1;
+    margin-left: 20px;
+    outline: none;
+}
+
+#msg {
+    width: 84%;
+    height: 250px !important;
+    resize: none;
+    align-self: center;
+    border: #2B2742 2px solid;
+    border-radius: 3px;
+    padding: 20px;
+    font-size: 20px;
+    font-family: "Calibri";
+    background-color: rgb(225, 225, 225);
+    outline: none;
+}
+
+#send-btn {
+    width: 120px;
+    height: 50px;
+    align-self: center;
+    font-family: 'Cyrillic';
+    color: white;
+    background-color: #2B2D50;
+    border: 3.5px solid #2B2D50;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-right: 0;
+    
+}
+
+#bottom {
+    position: absolute;
+    height: 35px;
+    width: 100%;
+    bottom: 0;
+    background-color: #2B2742;
+}
