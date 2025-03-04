@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Bubble';
+    src: url('../../fonts/HussarBoldWebEdition-xq5O.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cyrillic';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cyrillic-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#popup-body {
+    display: flex;
+    background-color: rgba(43, 39, 66, 0);
+    font-family: 'Cyrillic';
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    z-index: 100;
+}
+
+#apt-settings {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 190px;
+    align-self: center;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top: 100px;
+    margin-right: 50px;
+    padding: 0;
+    padding-top: 10px;
+    color: white;
+    background-color: #2B2742;
+    border: white 1px solid;
+    border-radius: 3px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
+}
+
+#apt-settings .p {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #b6b5ba;
+    font-family:'Calibri';
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+#apt-settings button {
+    width: 90px;
+    height: 40px;
+    align-self: center;
+    font-family: 'Cyrillic-Bold';
+    color: #2B2D50;
+    background-color: white;
+    border: 3.5px solid #2B2D50;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-right: 0;
+    
+}
