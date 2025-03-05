@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Bubble';
-    src: url('../../fonts/HussarBoldWebEdition-xq5O.otf') format('opentype');
+    src: url('../fonts/HussarBoldWebEdition-xq5O.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -43,8 +43,9 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #B2D9BB;
-    height: 4%;
+    height: 80px;
     width: 100%;
+    font-family: 'Bubble';
     padding-top: 1%;
     padding-left: 3%;
     padding-right: 3%;
@@ -73,26 +74,26 @@ body {
 }
 
 #search-bar {
-    height: 50px;
+    height: 40px;
     width: 500px;
     font-size: 20px;
     padding-left: 5%;
-    border: solid 3px #2B2742;
+    border: solid 2px #2B2742;
     border-radius: 30px;
 }
-
+    
+#search-icon {
+    height: 20px;
+    width: auto;
+}
+    
 #search-btn {
-    height: 55px;
-    width: 55px;
+    height: 45px;
+    width: 45px;
     color: white;
     background-color: #2B2742;
     border: solid 3px #2B2742;
     border-radius: 30px;
-}
-
-#search-icon {
-    height: 25px;
-    width: auto;
 }
 
 main {
@@ -110,24 +111,17 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    top: -5%;
     justify-content: center;
     align-items: center;
     padding: 0;
 }
 
 #title h1 {
-    font-family: 'Cyrillic-Bold';
     align-self: center;
+    font-family: 'Cyrillic-Bold';
     font-size: 45px;
+    margin-top: 4px;
     margin-bottom: 1%;
-    padding: 0;
-}
-
-#title p {
-    font-size: 20px;
-    text-decoration: underline;
-    margin: 0;
     padding: 0;
 }
 
@@ -152,7 +146,7 @@ main {
     align-content: center;
     align-items: center;
     align-self: center;
-    margin-top: 8%;
+    margin-top: 100px;
     padding-bottom: 5%;
     background-color: white;
 }
@@ -179,14 +173,14 @@ main {
 }
 
 .create-new{
-    width: 110px;
+    width: 90px;
     height: 35px;
     background-color: #2B2742;
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'Cyrillic';
     border: #2B2742 1px solid;
-    border-radius: 5px;
+    border-radius: 4px;
     margin-left: 25px;
 }
 
@@ -243,7 +237,7 @@ main {
     margin-bottom: 2%;
     font-family: 'Cyrillic-Bold';
     color: #2B2742;
-    border: 2px solid #3d3a50;
+    border: 1px solid #3d3a50;
     border-radius: 3px;
     box-shadow: -1px 4px 10px rgb(96, 96, 96);
    

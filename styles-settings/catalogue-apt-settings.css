@@ -5,10 +5,24 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Cyrillic';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cyrillic-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #popup-body {
     display: flex;
     background-color: rgba(43, 39, 66, 0.7);
-    font-family: 'Bubble';
+    font-family: 'Църиллиц';
     justify-content: center;
     align-items: center;
     height: 100vh;

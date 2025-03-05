@@ -5,10 +5,24 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Cyrillic';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cyrillic-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #popup-body {
     display: flex;
     background-color: rgba(43, 39, 66, 0.7);
-    font-family: 'Bubble';
+    font-family: 'Cyrillic';
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -51,7 +65,7 @@ button {
     margin-bottom: 10px;
     color: #2B2742;
     font-size: 20px;
-    font-family: 'Bubble';
+    font-family: 'Cyrillic';
     border: 1px white solid;
     border-radius: 3px;
 }

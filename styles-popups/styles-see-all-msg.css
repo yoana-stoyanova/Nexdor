@@ -86,7 +86,7 @@ h1 {
 }
 
 .all-message {
-    width: 1170px;
+    width: 900px;
     display: flex;
     flex-direction: row;
     align-items: center;

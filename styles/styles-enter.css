@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Bubble'; /* Name of the font */
+    font-family: 'Bubble';
     src: url('../fonts/HussarBoldWebEdition-xq5O.otf') format('opentype');
-    font-weight: normal; /* Optional: Set font weight */
-    font-style: normal;  /* Optional: Set font style */
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
@@ -56,7 +56,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4%;
+    font-family: 'Bubble';
+    height: 80px;
     width: 100%;
     padding-left: 3%;
     padding-right: 3%;
@@ -80,11 +81,6 @@ body {
     width: auto;
 }
 
-#profile-icon {
-    height: 45px;
-    width: auto;
-}
-
 main {
     position: relative;
     display: flex;
@@ -101,16 +97,20 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 35%;
-    height: 60%;
+    width: 340px;
     margin-left: 6%;
-    margin-top: 2%;
     z-index: 1;
+}
+
+#left-side-info h1 {
+    font-size: 30px;
+    margin-top: 3%;
+    margin-bottom: 20px;
 }
 
 #left-side-info p {
     font-family: 'Cyrillic-Bold';
-    font-size: 120%;
+    font-size: 17px;
     margin-top: 3%;
     margin-bottom: 2%;
 }
@@ -118,43 +118,42 @@ main {
 form {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 340px;
 }
 
 form label {
-    font-size: 120%;
-    margin-top: 3%;
+    font-size: 18px;
+    margin-top: 3px;
 }
 
 form input {
-    width: 100%;
-    height: 40px;
-    font-size: 150%;
-    font-family: "Arial";
+    width: 320px;
+    height: 30px;
+    font-size: 20px;
+    font-family: "Cyrillic";
     padding-left: 2%;
     margin-top: 3%;
     margin-bottom: 10%;
-    border: 3.5px solid #2B2742;
-    border-radius: 6px;
+    border: 2px solid #2B2742;
+    border-radius: 4px;
 }
 
 #enter-btn {
-    width: 100px;
-    height: 45px;
+    width: 150px;
+    height: 40px;
     align-self: center;
     font-family: 'Cyrillic';
-    font-size: 130%;
-    margin-top: 4%;
-    margin-bottom: 7%;
-    border: 3.5px solid #322C28;
-    border-radius: 6px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border: 3.5px solid #2B2742;
+    border-radius: 4px;
     color: white;
     background-color: #2B2742;
 }
 
 form p {
+    font-family: 'Cyrillic-Bold';
     font-size: 100%;
     align-self: center;
     text-align: center;
-    justify-content: center;
 }

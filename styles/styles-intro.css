@@ -36,7 +36,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4%;
+    height: 80px;
     width: 100%;
     padding-left: 3%;
     padding-right: 3%;
@@ -79,9 +79,9 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 35%;
+    width: 600px;
     height: 60%;
-    font-size: 180%;
+    font-size: 25px;
     margin-left: 5%;
     margin-top: 2%;
     z-index: 1;
@@ -92,7 +92,7 @@ main {
 }
 
 #left-side-info p{
-    font-size: 90%;
+    font-size: 25px;
     margin-top: 0%;
     margin-bottom: 4%;
 }
@@ -108,11 +108,11 @@ main {
 }
 
 #home-btns button {
-    width: 30%;
-    height: 80%;
+    width: 150px;
+    height: 45px;
     font-family: 'Cyrillic';
-    border: 3.5px solid #2B2D50;
-    border-radius: 8px;
+    border: 2px solid #2B2D50;
+    border-radius: 6px;
     font-size: 75%;
     margin-right: 0;
 }
