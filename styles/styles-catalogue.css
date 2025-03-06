@@ -37,7 +37,7 @@ z-index: -1;
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color: #B2D9BB;
+background-color: rgba(0,0,0,0);
 height: 80px;
 width: 100%;
 padding-top: 1%;
@@ -45,12 +45,14 @@ padding-left: 3%;
 padding-right: 3%;
 padding-bottom: 0;
 margin-bottom: 0;
+z-index: 1000;
 }
 
 #nav-bar div {
 display: flex;
 align-items: center;
 gap: 15px;
+z-index: 1000;
 }
 
 #nav-bar h1 {

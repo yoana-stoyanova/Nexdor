@@ -20,7 +20,7 @@
 }
 
 body {
-    overflow: hidden;
+    overflow:a uto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -129,12 +129,12 @@ main {
 
 #main-building {
     position: absolute;
-    width: 60%;
+    width: 900px;
     height: auto;
     object-fit: cover;
     z-index: -1;
     right: 0;
-    top: 0px;
+    bottom: 20%
 }
 
 #cloud-line {
@@ -143,7 +143,7 @@ main {
     height: 70%;
     object-fit: cover;
     z-index: -1;
-    top: 30%;
+    bottom: 0%;
     filter: drop-shadow(0 -4px 8px rgba(107, 107, 107, 0.3));
     transition: filter 0.3s ease;
 }
