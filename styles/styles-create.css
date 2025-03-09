@@ -150,3 +150,11 @@ main {
     align-self: center;
     text-align: center;
 }
+
+#part-two {
+    display: flex;
+}
+
+#part-two {
+    display: none;
+}

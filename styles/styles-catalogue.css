@@ -91,6 +91,7 @@ color: white;
 background-color: #2B2742;
 border: solid 3px #2B2742;
 border-radius: 30px;
+cursor: pointer;
 }
 
 #cloud-line {
