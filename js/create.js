@@ -1,17 +1,24 @@
+import { addBlock, allBlocksArr, getAllBlocks } from "../db-config/firebaseFunctions.js";
+
 let continueBtn = document.getElementById('continue-btn');
 let createBtn = document.getElementById('create-btn');
 
-continueBtn.addEventListener('click', function(e) {
+continueBtn.addEventListener('click', async function(e) {
     e.preventDefault();
 
     let id = document.getElementById('id').value;
     let password = document.getElementById('password').value;
     let rePass = document.getElementById('re-pass').value;
 
-    if(!(id.trim() != '' && password.trim() != 0 && password == rePass)) return;
+    let arr = await allBlocksArr();
 
-    console.log(11);
+    let taken = false;
+    if(arr.find(x => x.id == id)) taken = true;
+    if(taken) return;
     
+    const regex = /^.{2,}$/;
+
+    if(!(regex.test(id.trim()) && regex.test(password.trim()) && password == rePass)) return;
 
     document.getElementById("part-one").style.display = "none";
     document.getElementById("part-two").style.display = "flex";
@@ -21,11 +28,9 @@ continueBtn.addEventListener('click', function(e) {
 
         let num = document.getElementById('num').value;
         let key = document.getElementById('key').value;
-        let reKey = document.getElementById('re-key').value;
+        let reKey = document.getElementById('re-key').value;  
 
-        if(!(num.trim() != '' && key.trim() != 0 && key == reKey)) return;
-
-        //add error identification & limits
+        if(!(num.trim() && regex.test(key.trim()) && key == reKey)) return;
 
         let apartments = Array.from({ length: num }, (_, i) => ({
             id: i + 1,
@@ -42,14 +47,10 @@ continueBtn.addEventListener('click', function(e) {
             apartments
         }
 
-        //publish block
-
-        window.location.href = "./enter.html";
-        window.alert("Блокът е успешно създаден.");
+        addBlock(block);
 
         console.log(block);
-        
-
+        window.location.href='../enter.html';
     });
 
 });
