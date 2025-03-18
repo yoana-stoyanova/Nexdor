@@ -50,7 +50,7 @@ continueBtn.addEventListener('click', async function(e) {
         addBlock(block);
 
         console.log(block);
-        window.location.href='../enter.html';
+        
     });
 
 });
