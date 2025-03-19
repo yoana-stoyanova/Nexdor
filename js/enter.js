@@ -1,4 +1,5 @@
-import { html, render } from "../node_modules/lit-html/lit-html.js";
+import { html, render } from 'https://cdn.skypack.dev/lit';
+import { allBlocksArr } from '../db-config/firebaseFunctions.js';
 
 let info = document.getElementById('left-side-info');
 
@@ -40,7 +41,7 @@ function formOption(type) {
     render(type == "member" ? memberTemplate : managerTemplate, info);
 
     document.getElementById("member").addEventListener("click", () => formOption("member"));
-   document.getElementById("manager").addEventListener("click", () => formOption("manager"));
+    document.getElementById("manager").addEventListener("click", () => formOption("manager"));
 
     if(type == "member"){
         document.getElementById('enter-btn').addEventListener('click', memberEnter);
@@ -51,30 +52,53 @@ function formOption(type) {
 
 formOption('member');
 
-function memberEnter(e) {
+async function memberEnter(e) {
     e.preventDefault();
 
     let id = document.getElementById('id').value;
     let key = document.getElementById('key').value;
 
-    if(!(id.trim() != '' && key.trim() != '')) return;
+    const regex = /^.{2,}$/;
 
-    //check if correct
-    //save login tokens
+    if(!(regex.test(id.trim()) != '' && regex.test(key.trim()) != '')) return;
 
-    console.log('logged in');
+    let arr = await allBlocksArr();
+
+    let block = arr.find(x => x.id == id && x.key == key);
+
+    if(block){
+        localStorage.setItem('position', 'member');
+        localStorage.setItem('block', JSON.stringify(block));
+    } else {
+        return;
+    }
+
+    window.location.href = "../catalogue.html";
+
 }
 
-function managerEnter(e) {
+async function managerEnter(e) {
     e.preventDefault();
 
     let id = document.getElementById('id').value;
     let password = document.getElementById('password').value;
 
-    if(!(id.trim() != '' && password.trim() != '')) return;
+    const regex = /^.{2,}$/;
 
-    //check if correct
-    //save login tokens
+    if(!(regex.test(id.trim() )!= '' && regex.test(password.trim()) != '')) return;
 
-    console.log('logged in');
+    let arr = await allBlocksArr();
+
+    let block = arr.find(x => x.id == id && x.password == password);
+
+    if(block){
+        localStorage.setItem('position', 'manager');
+        localStorage.setItem('block', JSON.stringify(block));
+    } else {
+        return;
+    }
+
+    window.location.href = "../catalogue.html";
+
 }
+

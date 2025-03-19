@@ -42,6 +42,7 @@ continueBtn.addEventListener('click', async function(e) {
 
         let block = {
             id,
+            name: `"${id}"`,
             password,
             key,
             apartments
@@ -50,6 +51,8 @@ continueBtn.addEventListener('click', async function(e) {
         addBlock(block);
 
         console.log(block);
+
+        window.location.href = '../enter.html';
         
     });
 
