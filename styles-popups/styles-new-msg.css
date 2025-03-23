@@ -55,6 +55,7 @@
     width: 20px;
     right: 1%;
     top: 10px;
+    cursor: pointer;
 }
 
 #top {
@@ -145,6 +146,7 @@ select {
     border-radius: 4px;
     font-size: 18px;
     margin-bottom: 7px;
+    cursor: pointer;
     
 }
 

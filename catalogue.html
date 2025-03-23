@@ -41,28 +41,44 @@
                 <!-- APTS -->
             </div>
 
-            <button id="load-more">Зареди още</button>
+            <!-- <button id="load-more">Зареди още</button> -->
         </div>
 
     </main>
+
+    <div id="apt-options-popup">
+        <iframe id="apt-options" src="./html/apt-settings/catalogue-options.html"></iframe>
+    </div>
+    <div class="popup" id="apt-send-msg-popup">
+        <iframe id="apt-send-msg" src="./html/pop-ups/new-msg.html"></iframe>
+    </div>
+    <div class="popup" id="apt-enter-popup">
+        <iframe id="apt-enter" src="./html/apt-settings/enter-apt.html"></iframe>
+    </div>
+
+    <div class="popup" id="settings-popup">
+        <iframe id="block-settings-popup" src="./html/block-settings/block-settings.html"></iframe>
+    </div>
+    <div class="popup" id="change-block-name-popup" hidden>
+        <iframe id="change-block-name" src="./html/block-settings/change-block-name.html"></iframe>
+    </div>
+    <div class="popup" id="change-block-password-popup" hidden>
+        <iframe id="change-block-password" src="./html/block-settings/change-block-password.html"></iframe>
+    </div>
+    <div class="popup" id="change-block-key-popup" hidden>
+        <iframe id="change-block-key" src="./html/block-settings/change-default-key.html"></iframe>
+    </div>
+    <div class="popup" id="show-apt-passwords-popup" hidden>
+        <iframe id="show-apt-passwords" src="./html/block-settings/show-all-passwords.html"></iframe>
+    </div>
+    <div class="popup" id="delete-block-popup" hidden>
+        <iframe id="delete-block" src="./html/block-settings/delete-block.html"></iframe>
+    </div>
+
+    <script type="module" src="./js/catalogue.js"></script>
+    <script type="module" src="./js/catalogue-settings/popup-msgs.js"></script>
 </body>
 
-<div class="popup" id="settings-popup" hidden>
-    <iframe id="msg-event-popup" src="./html/block-settings/block-settings.html"></iframe>
-</div>
-<div class="popup" id="change-block-name-popup" hidden>
-    <iframe id="msg-event-popup" src="./html/block-settings/change-block-name.html"></iframe>
-</div>
-<div class="popup" id="change-block-password-popup" hidden>
-    <iframe id="msg-event-popup" src="./html/block-settings/change-block-password.html"></iframe>
-</div>
-<div class="popup" id="change-block-key-popup" hidden>
-    <iframe id="msg-event-popup" src="./html/block-settings/change-default-key.html"></iframe>
-</div>
-<div class="popup" id="delete-block-popup" hidden>
-    <iframe id="msg-event-popup" src="./html/block-settings/delete-block.html"></iframe>
-</div>
 
-<script type="module" src="./js/catalogue.js"></script>
 
 </html>

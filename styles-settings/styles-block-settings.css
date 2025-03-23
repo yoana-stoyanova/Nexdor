@@ -21,25 +21,25 @@
 
 #popup-body {
     display: flex;
+    flex-direction: row;
     background-color: 0;
     font-family: 'Cyrillic';
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: 50vh;
+    width: 20vw;
+    margin-right: 50px;
+    margin-left: auto;
+    margin-top: 100px;
     z-index: 100;
 }
 
 #block-settings {
-    position: relative;
+    position: fixed;
     display: flex;
     flex-direction: column;
     width: 330px;
     height: auto;
-    margin-left: auto;
-    margin-bottom: auto;
-    margin-top: 100px;
-    margin-right: 50px;
     padding: 0;
     color: white;
     background-color: #2B2742;
@@ -59,6 +59,7 @@
     font-family:'Calibri';
     font-size: 20px;
     line-height: 1.2;
+    cursor: pointer;
 }
 
 #block-settings button {
@@ -72,6 +73,7 @@
     border-radius: 5px;
     font-size: 20px;
     margin-top: 10px;
+    cursor: pointer;
     
 }
 

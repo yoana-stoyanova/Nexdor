@@ -55,6 +55,7 @@
     width: 20px;
     right: 1%;
     top: 10px;
+    cursor: pointer;
 }
 
 #top {
@@ -130,6 +131,7 @@ select {
     font-size: 18px;
     margin-right: 0;
     margin-bottom: 5px;
+    cursor: pointer;
     
 }
 

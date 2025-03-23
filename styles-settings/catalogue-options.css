@@ -19,23 +19,12 @@
     font-style: normal;
 }
 
-#popup-body {
-    display: flex;
-    background-color: rgba(43, 39, 66, 0.7);
-    font-family: 'Cyrillic';
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    z-index: 100;
-}
-
 #apt-settings {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20%;
+    width: 300px;
     height: auto;
     align-self: center;
     padding: 0;
@@ -43,7 +32,7 @@
     background-color: #2B2742;
     border: white 1px solid;
     border-radius: 3px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.7));
 }
 
 #apt-settings p {
@@ -56,6 +45,7 @@
     font-family:'Calibri';
     font-size: 20px;
     line-height: 1.2;
+    cursor: pointer;
 }
 
 button {
@@ -68,4 +58,5 @@ button {
     font-family: 'Cyrillic';
     border: 1px white solid;
     border-radius: 3px;
+    cursor: pointer;
 }
