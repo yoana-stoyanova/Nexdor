@@ -1,26 +1,21 @@
-import { updateBlockName } from "../../db-config/firebaseFunctions.js";
+import { updateBlockKey } from "../../db-config/firebaseFunctions.js";
 import { block } from "../get-block.js";
 
-let newNameField = document.getElementById('new-name');
+let newKeyField = document.getElementById('new-key');
 let passwordField = document.getElementById('password');
 let sendBtn = document.getElementById('send-btn');
 let xBtn = document.getElementById('X-icon');
 
-newNameField.value = block['name'];
-
 sendBtn.addEventListener('click', function(e) {
     const regex = /^.{2,}$/;
 
-    if(regex.test(newNameField.value.trim()) == '') return;
+    if(regex.test(newKeyField.value.trim()) == '') return;
     if(passwordField.value != block['password']) return;
 
-    updateBlockName(block["id"], newNameField.value);
+    updateBlockKey(block["id"], newKeyField.value);
 
-    newNameField.value = block['name'];
+    newKeyField.value = '';
     passwordField.value = '';
 
     xBtn.click();
 });
-
-
-

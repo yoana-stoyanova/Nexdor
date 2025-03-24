@@ -3,6 +3,7 @@ import { block, position } from "../js/get-block.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log('loaded');
+    console.log(block, 111);
 
     let settingsBtn = document.getElementById("profile-icon");
     let inputField = document.getElementById("search-bar");

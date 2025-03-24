@@ -52,7 +52,7 @@ continueBtn.addEventListener('click', async function(e) {
 
         console.log(block);
 
-        window.location.href = '../enter.html';
+        window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
         
     });
 

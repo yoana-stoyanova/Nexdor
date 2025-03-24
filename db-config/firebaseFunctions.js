@@ -1,5 +1,5 @@
 import { db } from "./firebaseConfig.js";
-import { getFirestore, doc, setDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDoc, getDocs, updateDoc, collection } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 export async function addBlock(newBlockData) {
     try {
@@ -49,4 +49,37 @@ export async function getBlockById(blockId) {
       console.error("Error fetching block:", error);
       return null;
     }
+}
+
+export async function updateBlockName(blockId, newName) {
+  try {
+    const blockRef = doc(db, "blocks", blockId);
+    await updateDoc(blockRef, { name: newName });
+
+    console.log("Block name updated successfully!");
+  } catch (error) {
+    console.error("Error updating block name:", error);
+  }
+}
+
+export async function updateBlockPassword(blockId, newPassword) {
+  try {
+    const blockRef = doc(db, "blocks", blockId);
+    await updateDoc(blockRef, { password: newPassword });
+
+    console.log("Block password updated successfully!");
+  } catch (error) {
+    console.error("Error updating block password:", error);
+  }
+}
+
+export async function updateBlockKey(blockId, newKey) {
+  try {
+    const blockRef = doc(db, "blocks", blockId);
+    await updateDoc(blockRef, { key: newKey });
+
+    console.log("Block key updated successfully!");
+  } catch (error) {
+    console.error("Error updating block key:", error);
+  }
 }
