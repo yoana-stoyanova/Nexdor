@@ -1,5 +1,7 @@
 import { updateBlockName } from "../../db-config/firebaseFunctions.js";
-import { block } from "../get-block.js";
+import { blockId as id, updateBlockStorage } from "../../js/get-block.js";
+
+let block = JSON.parse(localStorage.getItem('block'));
 
 let newNameField = document.getElementById('new-name');
 let passwordField = document.getElementById('password');
@@ -8,18 +10,20 @@ let xBtn = document.getElementById('X-icon');
 
 newNameField.value = block['name'];
 
-sendBtn.addEventListener('click', function(e) {
+sendBtn.addEventListener('click', async function(e) {
     const regex = /^.{2,}$/;
 
     if(regex.test(newNameField.value.trim()) == '') return;
     if(passwordField.value != block['password']) return;
 
-    updateBlockName(block["id"], newNameField.value);
+    updateBlockName(id, newNameField.value);
 
     newNameField.value = block['name'];
     passwordField.value = '';
 
     xBtn.click();
+
+    await updateBlockStorage(id);
 });
 
 

@@ -1,5 +1,6 @@
 import { db } from "./firebaseConfig.js";
-import { getFirestore, doc, setDoc, getDoc, getDocs, updateDoc, collection } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getFirestore, collection } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { doc, setDoc, getDoc, getDocs, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 export async function addBlock(newBlockData) {
     try {
@@ -81,5 +82,16 @@ export async function updateBlockKey(blockId, newKey) {
     console.log("Block key updated successfully!");
   } catch (error) {
     console.error("Error updating block key:", error);
+  }
+}
+
+export async function deleteBlock(blockId) {
+  try {
+    const blockRef = doc(db, "blocks", blockId);
+    await deleteDoc(blockRef);
+    console.log(`Block ${blockId} deleted successfully!`);
+    window.location.href = '../../index.html';
+  } catch (error) {
+    console.error("Error deleting block:", error);
   }
 }

@@ -4,6 +4,8 @@ window.addEventListener('DOMContentLoaded', function(e){
     let changeBlockKeyBtn = document.getElementById('change-block-key');
     let showAptPassBtn = document.getElementById('show-apt-passwords');
     let deleteBlockBtn = document.getElementById('delete-block');
+    let exitBlockBtn = document.querySelector('button');
+    let blockIdField = document.getElementById('block-id');
     
     changeBlockNameBtn.addEventListener("click", () => {
         window.parent.postMessage({ action: "showChangeBlockNamePopup" }, "*");
@@ -24,4 +26,11 @@ window.addEventListener('DOMContentLoaded', function(e){
     deleteBlockBtn.addEventListener("click", () => {
         window.parent.postMessage({ action: "showDeleteBlockPopup" }, "*");
     });
+
+    exitBlockBtn.addEventListener('click', function(e) {
+        localStorage.clear();
+        window.location.href = '../../index.html'
+    })
+
+    blockIdField.textContent = `(ID: ${localStorage.getItem('id')})`;
 });

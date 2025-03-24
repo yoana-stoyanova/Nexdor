@@ -1,5 +1,7 @@
 import { html, render } from 'https://cdn.skypack.dev/lit';
-import { block, position } from "../js/get-block.js";
+import { position } from './get-block.js';
+
+let block = JSON.parse(localStorage.getItem('block'));
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log('loaded');

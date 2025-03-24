@@ -1,5 +1,18 @@
+import { allBlocksArr } from "../db-config/firebaseFunctions.js";
+
 export let position = localStorage.getItem('position');
-export let block = JSON.parse(localStorage.getItem('block'));
+export let blockId = localStorage.getItem('id');
+
+export async function updateBlockStorage(id){
+    let arr = await allBlocksArr();
+    
+    let block = arr.find(x => x.id == blockId);
+
+    localStorage.setItem('block', JSON.stringify(block));
+
+    console.log(localStorage.getItem('block'));
+    
+}
 
 // block = {
 //         "id": "666",

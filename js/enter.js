@@ -56,7 +56,6 @@ async function memberEnter(e) {
     e.preventDefault();
 
     let id = document.getElementById('id').value;
-    console.log("enter", id);
     
     let key = document.getElementById('key').value;
 
@@ -71,6 +70,7 @@ async function memberEnter(e) {
     if(block){
         localStorage.setItem('position', 'member');
         localStorage.setItem('block', JSON.stringify(block));
+        localStorage.setItem('id', id);
     } else {
         return;
     }
@@ -84,7 +84,6 @@ async function managerEnter(e) {
 
     let id = document.getElementById('id').value;
     let password = document.getElementById('password').value;
-    console.log("enter", id);
 
     const regex = /^.{2,}$/;
 
@@ -97,13 +96,13 @@ async function managerEnter(e) {
     if(block){
         localStorage.setItem('position', 'manager');
         localStorage.setItem('block', JSON.stringify(block));
+        localStorage.setItem('id', id);
     } else {
         return;
     }
 
-    window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
-
-;
+    //window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
+    window.location.href = './catalogue.html'
 
 }
 
