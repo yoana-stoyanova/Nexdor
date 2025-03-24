@@ -56,6 +56,8 @@ async function memberEnter(e) {
     e.preventDefault();
 
     let id = document.getElementById('id').value;
+    console.log("enter", id);
+    
     let key = document.getElementById('key').value;
 
     const regex = /^.{2,}$/;
