@@ -84,6 +84,7 @@ async function managerEnter(e) {
 
     let id = document.getElementById('id').value;
     let password = document.getElementById('password').value;
+    console.log("enter", id);
 
     const regex = /^.{2,}$/;
 
