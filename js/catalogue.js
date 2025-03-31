@@ -23,13 +23,18 @@ document.addEventListener("DOMContentLoaded", function () {
     searchBtn.addEventListener('click', function(e){ //search
         let input = inputField.value;
 
-        if(input.trim() == '') return;
-
         let res = apts.filter(x => String(x["id"]).includes(input));
         render(fillAptList(res), aptList);
 
         history.pushState({ search: input }, "", `?search=${input}`);
     });
+
+    let searchQuery = localStorage.getItem("searchQuery");
+    if (searchQuery) {
+        inputField.value = searchQuery;
+        searchBtn.click();
+        localStorage.removeItem('searchQuery');
+    }
 
     function createDoor(apt){
         return html`
@@ -56,9 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const aptOptionsPopup = document.getElementById("apt-options-popup"); 
 
     document.addEventListener("click", function(event) { //show apt options
-        const apt = event.target.closest(".apt"); 
+        const apt = event.target.closest(".apt");
 
         if (apt && aptList.contains(apt)) {
+            const num = apt.getAttribute('id');
+            localStorage.setItem('apt-id', num);
+                
             let x = event.clientX;
             let y = event.clientY;
             const popupWidth = aptOptionsPopup.offsetWidth;
@@ -82,6 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Clicked outside, hiding popup");
             aptOptionsPopup.style.display = "none";
             aptOptionsPopup.style.opacity = "0";
+
+            localStorage.removeItem('apt-id');
         }
     });
 
@@ -108,6 +118,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     popupDiv.style.display = "none";
                 }
             }
+        }
+
+        if (event.data.type === "searchQuery") {
+            inputField.value = event.data.value;
+            searchBtn.click();
         }
     });
 

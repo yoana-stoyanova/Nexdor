@@ -95,3 +95,99 @@ export async function deleteBlock(blockId) {
     console.error("Error deleting block:", error);
   }
 }
+
+export async function addMessageToApartment(blockId, aptId, messageObj) {
+  try {
+    const blockRef = doc(db, "blocks", blockId);
+    const blockSnap = await getDoc(blockRef);
+
+    let blockData = blockSnap.data();
+    let apartments = blockData.apartments || [];
+    
+    let aptIndex = apartments.findIndex(apt => apt.id === aptId);
+    if (aptIndex === -1) {
+      console.error("Apartment not found!");
+      return;
+    }
+
+    apartments[aptIndex].messages.push(messageObj);
+
+    await updateDoc(blockRef, { apartments });
+    console.log("Message added successfully!");
+  } catch (error) {
+    console.error("Error adding message:", error);
+  }
+}
+
+export async function deleteMessage(blockId, aptId, msgId) {
+  try {
+    const blockRef = doc(db, `blocks/${blockId}`);
+    const blockSnap = await getDoc(blockRef);
+
+    if (!blockSnap.exists()) {
+        console.error("Block not found");
+        return;
+    }
+
+    let blockData = blockSnap.data();
+    let apartments = blockData.apartments || [];
+
+    let aptIndex = apartments.findIndex(a => a.id === aptId);
+    if (aptIndex === -1) {
+        console.error("Apartment not found");
+        return;
+    }
+
+    apartments[aptIndex].messages = apartments[aptIndex].messages.filter(msg => msg.id !== msgId);
+
+    await updateDoc(blockRef, { apartments });
+
+} catch (error) {
+    console.error("Error deleting message:", error);
+}
+}
+
+export async function addEventToApartments(blockId, evtObj) {
+  try {
+    const blockRef = doc(db, "blocks", blockId);
+    const blockSnap = await getDoc(blockRef);
+
+    let blockData = blockSnap.data();
+    let apartments = blockData.apartments || [];
+    
+    apartments.forEach(apt => apt.events.push(evtObj));
+
+    await updateDoc(blockRef, { apartments });
+    console.log("Event added successfully!");
+  } catch (error) {
+    console.error("Error adding event:", error);
+  }
+}
+
+export async function deleteEvent(blockId, aptId, evtId) {
+  try {
+    const blockRef = doc(db, `blocks/${blockId}`);
+    const blockSnap = await getDoc(blockRef);
+
+    if (!blockSnap.exists()) {
+        console.error("Block not found");
+        return;
+    }
+
+    let blockData = blockSnap.data();
+    let apartments = blockData.apartments || [];
+
+    let aptIndex = apartments.findIndex(a => a.id === aptId);
+    if (aptIndex === -1) {
+        console.error("Apartment not found");
+        return;
+    }
+
+    apartments[aptIndex].events = apartments[aptIndex].events.filter(evt => evt.id !== evtId);
+
+    await updateDoc(blockRef, { apartments });
+
+} catch (error) {
+    console.error("Error deleting event:", error);
+}
+}

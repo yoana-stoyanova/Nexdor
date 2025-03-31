@@ -113,6 +113,7 @@ h1 {
 .all-message p {
     width: 800px;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .del-btn {
@@ -126,6 +127,7 @@ h1 {
     color: #2B2742;
     background-color: white;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 #bottom {

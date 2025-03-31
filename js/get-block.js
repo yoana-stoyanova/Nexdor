@@ -3,7 +3,7 @@ import { allBlocksArr } from "../db-config/firebaseFunctions.js";
 export let position = localStorage.getItem('position');
 export let blockId = localStorage.getItem('id');
 
-export async function updateBlockStorage(id){
+export async function updateBlockStorage(){
     let arr = await allBlocksArr();
     
     let block = arr.find(x => x.id == blockId);
@@ -12,6 +12,18 @@ export async function updateBlockStorage(id){
 
     console.log(localStorage.getItem('block'));
     
+}
+
+export async function updateAptStorage() {
+    let arr = await allBlocksArr();
+    
+    let block = arr.find(x => x.id == blockId);
+
+    let oldApt = JSON.parse(localStorage.getItem('apt'));
+    let apt = block['apartments'].find(x => x.id == oldApt.id)
+
+    localStorage.setItem('block', JSON.stringify(block));
+    localStorage.setItem('apt', JSON.stringify(apt));
 }
 
 // block = {

@@ -31,7 +31,7 @@
 
     <main>
         <div id="title">
-            <h1 id="block-apt">Бл. 100 - ап. 01</h1>
+            <h1 id="block-apt"></h1>
         </div>
 
         <img id="cloud-line" src="./icons/cloud-line3-2.png" alt="">
@@ -41,41 +41,13 @@
                 <div id="msg-headers" class="title">
                     <div class="title-left">
                         <p class="category">Моите съобщения</p>
-                        <button class="create-new">+ Създай</button>
+                        <button id="create-msg" class="create-new">+ Създай</button>
                     </div>
                     
-                    <p>Виж всички...</p>
+                    <p id="see-all-msg-btn" class="see-all">Виж всички...</p>
                 </div>
 
                 <div id="messages" class="msg-list">
-                    <div class="message">
-                        <img src="./icons/letter.png" alt="">
-                         <p>Hello! I just wanted to tell you that...</p>      
-                    </div>
-                    <div class="message">
-                        <img src="./icons/letter.png" alt="">
-                         <p>Hello! I just wanted to tell you that...</p>      
-                    </div>
-                    <div class="message">
-                        <img src="./icons/letter.png" alt="">
-                         <p>Hello! I just wanted to tell you that...</p>      
-                    </div>
-                    <div class="message">
-                        <img src="./icons/letter.png" alt="">
-                         <p>Hello! I just wanted to tell you that...</p>      
-                    </div>
-                    <div class="message">
-                        <img src="./icons/letter.png" alt="">
-                         <p>Hello! I just wanted to tell you that...</p>      
-                    </div>
-                    <div class="message">
-                        <img src="./icons/letter.png" alt="">
-                         <p>Hello! I just wanted to tell you that...</p>      
-                    </div>
-                    <div class="message">
-                        <img src="./icons/letter.png" alt="">
-                         <p>Hello! I just wanted to tell you that...</p>      
-                    </div>
                 </div>
 
             </div>
@@ -84,29 +56,13 @@
                 <div id="event-headers" class="title">
                     <div class="title-left">
                         <p class="category">Моите събития</p>
-                        <button class="create-new">+ Създай</button>
+                        <button id="create-evt" class="create-new">+ Създай</button>
                     </div>
                     
-                    <p>Виж всички...</p>
+                    <p id="see-all-evt-btn" class="see-all">Виж всички...</p>
                 </div>
 
                 <div id="event" class="msg-list">
-                    <div class="event">
-                        <!-- event icon -->
-                         <p>ATTENTION! Power shortages have b...</p>
-                    </div>
-                    <div class="event">
-                        <!-- event icon -->
-                         <p>ATTENTION! Power shortages have b...</p>
-                    </div>
-                    <div class="event">
-                        <!-- event icon -->
-                         <p>ATTENTION! Power shortages have b...</p>
-                    </div>
-                    <div class="event">
-                        <!-- event icon -->
-                         <p>ATTENTION! Power shortages have b...</p>
-                    </div>
                     
                 </div>
 
@@ -115,42 +71,44 @@
         </div>
     </main>
 
-    
+    <script type="module" src="./js/homepage.js"></script>
 </body>
     <div id="read-msg-event" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/pop-ups/read-msg-event.html"></iframe>
+        <iframe id="read-msg-event-popup" src="./html/pop-ups/read-msg-event.html"></iframe>
     </div>
     <div id="apt-settings" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/apt-settings/apt-settings.html"></iframe>
+        <iframe id="apt-settings-popup" src="./html/apt-settings/apt-settings.html"></iframe>
     </div>
     <div id="change-name" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/apt-settings/change-apt-name.html"></iframe>
+        <iframe id="change-name-popup" src="./html/apt-settings/change-apt-name.html"></iframe>
     </div>
     <div id="change-password" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/apt-settings/change-apt-password.html"></iframe>
+        <iframe id="change-password-popup" src="./html/apt-settings/change-apt-password.html"></iframe>
     </div>
     <div id="delete-apt" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/apt-settings/delete-apt.html"></iframe>
+        <iframe id="delete-apt-popup" src="./html/apt-settings/delete-apt.html"></iframe>
     </div>
 
-    <div id="read-msg" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/pop-ups/read-msg-event.html"></iframe>
+    <div id="all-msg" class="popup-container">
+        <iframe id="all-msg-popup" src="./html/pop-ups/see-all-msg.html"></iframe>
     </div>
-    <div id="new-msg" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/pop-ups/new-msg.html"></iframe>
+    <div id="read-msg" class="popup-container">
+        <iframe id="read-msg-popup" src="./html/pop-ups/read-msg-event.html"></iframe>
     </div>
-
-    <div id="read-event" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/pop-ups/read-msg-event.html"></iframe>
+    <div id="new-msg" class="popup-container">
+        <iframe id="new-msg-popup" src="./html/pop-ups/new-msg.html"></iframe>
     </div>
-    <div id="new-event" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/pop-ups/new-event.html"></iframe>
-    </div>
-
-    <div id="all-msg" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/pop-ups/see-all-msg.html"></iframe>
-    </div>
+    
     <div id="all-event" class="popup-container" hidden>
-        <iframe id="msg-event-popup" src="./html/pop-ups/see-all-event.html"></iframe>
+        <iframe id="all-event-popup" src="./html/pop-ups/see-all-event.html"></iframe>
     </div>
+    <div id="read-event" class="popup-container" hidden>
+        <iframe id="read-event-popup" src="./html/pop-ups/read-msg-event.html"></iframe>
+    </div>
+    <div id="new-event" class="popup-container">
+        <iframe id="new-event-popup" src="./html/pop-ups/new-event.html"></iframe>
+    </div>
+
+    
+    
 </html>
