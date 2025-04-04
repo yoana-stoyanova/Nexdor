@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem('apt', JSON.stringify(apt));
         
         setTimeout(() => {
-            window.location.href = "./homepage.html?nocache=" + new Date().getTime();
+            window.location.href = "../../homepage.html?nocache=" + new Date().getTime();
           }, 100);
     });
 
