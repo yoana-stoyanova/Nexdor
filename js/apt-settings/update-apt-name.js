@@ -1,14 +1,14 @@
-import { updateBlockName } from "../../db-config/firebaseFunctions.js";
-import { blockId as id, updateBlockStorage } from "../../js/get-block.js";
+import { updateAptName } from "../../db-config/firebaseFunctions.js";
+import { blockId as id, updateAptStorage, updateBlockStorage } from "../../js/get-block.js";
 
 let block = JSON.parse(localStorage.getItem('block'));
+let apt = JSON.parse(localStorage.getItem('apt'));
 
 let newNameField = document.getElementById('new-name');
 let passwordField = document.getElementById('password');
 let sendBtn = document.getElementById('send-btn');
-let xBtn = document.getElementById('X-icon');
 
-newNameField.value = block['name'];
+newNameField.value = apt['name'];
 
 sendBtn.addEventListener('click', async function(e) {
     const regex = /^.{2,}$/;
@@ -16,15 +16,10 @@ sendBtn.addEventListener('click', async function(e) {
     if(regex.test(newNameField.value.trim()) == '') return;
     if(passwordField.value != block['password']) return;
 
-    updateBlockName(id, newNameField.value);
+    updateAptName(id, apt['id'], newNameField.value);
 
-    newNameField.value = block['name'];
-    passwordField.value = '';
-
-    await updateBlockStorage(id);
+    await updateBlockStorage();
+    await updateAptStorage();
 
     parent.postMessage('iframe-updated', '*');
 });
-
-
-

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         localStorage.setItem('apt', JSON.stringify(apt));
         
-        window.location.href = '../../homepage.html'
+        window.location.href = "https://yoana-stoyanova.github.io/Nexdor/homepage.html";
     });
 
 });

@@ -17,4 +17,6 @@ sendBtn.addEventListener('click', function(e) {
     deleteBlock(id);
 
     localStorage.clear();
+
+    window.location.href = window.location.href = "https://yoana-stoyanova.github.io/Nexdor/index.html";;
 });

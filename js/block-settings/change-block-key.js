@@ -19,7 +19,7 @@ sendBtn.addEventListener('click', async function(e) {
     newKeyField.value = '';
     passwordField.value = '';
 
-    xBtn.click();
-
     await updateBlockStorage(id);
+
+    parent.postMessage('iframe-updated', '*');
 });

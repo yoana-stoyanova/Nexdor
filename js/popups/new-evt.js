@@ -30,8 +30,7 @@ sendBtn.addEventListener('click', async function() {
     evtTitle.value = '';
     textarea.value = '';
 
-    document.getElementById('X-icon').click();
-    window.location.reload();
+    parent.postMessage('iframe-updated', '*');
     
 });
 

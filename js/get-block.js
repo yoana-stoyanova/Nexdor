@@ -9,8 +9,8 @@ export async function updateBlockStorage(){
     let block = arr.find(x => x.id == blockId);
 
     localStorage.setItem('block', JSON.stringify(block));
-
-    console.log(localStorage.getItem('block'));
+    
+    console.log('block updated');
     
 }
 
@@ -24,6 +24,8 @@ export async function updateAptStorage() {
 
     localStorage.setItem('block', JSON.stringify(block));
     localStorage.setItem('apt', JSON.stringify(apt));
+
+    console.log('apt updated');
 }
 
 // block = {

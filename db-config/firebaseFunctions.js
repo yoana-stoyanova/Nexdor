@@ -90,7 +90,7 @@ export async function deleteBlock(blockId) {
     const blockRef = doc(db, "blocks", blockId);
     await deleteDoc(blockRef);
     console.log(`Block ${blockId} deleted successfully!`);
-    window.location.href = '../../index.html';
+    window.location.href = 'window.location.href = "https://yoana-stoyanova.github.io/Nexdor/index.html";';
   } catch (error) {
     console.error("Error deleting block:", error);
   }
@@ -190,4 +190,50 @@ export async function deleteEvent(blockId, aptId, evtId) {
 } catch (error) {
     console.error("Error deleting event:", error);
 }
+}
+
+export async function updateAptName(blockId, aptId, newName) {
+  try {
+    const blockRef = doc(db, "blocks", blockId);
+    const blockSnap = await getDoc(blockRef);
+
+    let blockData = blockSnap.data();
+    let apartments = blockData.apartments || [];
+    
+    let aptIndex = apartments.findIndex(apt => apt.id === aptId);
+    if (aptIndex === -1) {
+      console.error("Apartment not found!");
+      return;
+    }
+
+    apartments[aptIndex].name = newName;
+
+    await updateDoc(blockRef, { apartments });
+    console.log("Name updated successfully!");
+  } catch (error) {
+    console.error("Error updating name:", error);
+  }
+}
+
+export async function updateAptPassword(blockId, aptId, newPass) {
+  try {
+    const blockRef = doc(db, "blocks", blockId);
+    const blockSnap = await getDoc(blockRef);
+
+    let blockData = blockSnap.data();
+    let apartments = blockData.apartments || [];
+    
+    let aptIndex = apartments.findIndex(apt => apt.id === aptId);
+    if (aptIndex === -1) {
+      console.error("Apartment not found!");
+      return;
+    }
+
+    apartments[aptIndex].password = newPass;
+
+    await updateDoc(blockRef, { apartments });
+    console.log("Password updated successfully!");
+  } catch (error) {
+    console.error("Error updating password:", error);
+  }
 }

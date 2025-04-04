@@ -137,4 +137,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    window.addEventListener('message', function(event) {
+        if (event.data === 'iframe-updated') {
+            window.location.reload();
+        }
+    });
+    
+
 });

@@ -6,9 +6,21 @@ let apt = JSON.parse(localStorage.getItem('apt'));
 document.addEventListener("DOMContentLoaded", function () {
     let inputField = document.getElementById("search-bar");
     let searchBtn = document.getElementById("search-btn");
+    let settingsBtn = document.getElementById("settings-icon");
     let title = document.getElementById('block-apt');
     let msgList = document.getElementById('messages');
     let evtList = document.getElementById('event');
+
+    settingsBtn.addEventListener('click', function(e) {
+        let aptSettingsPopup = document.getElementById('apt-settings');
+
+        if(aptSettingsPopup.style.display != 'flex'){
+            aptSettingsPopup.style.display = 'flex';
+        }
+        else {
+            aptSettingsPopup.style.display = 'none';
+        }
+    });
 
     title.textContent = `Бл. ${block.name} - ап. ${apt.id} (${apt.name})`;
     render(fillMsgList(apt['messages']), msgList);
@@ -21,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let searchValue = inputField.value;
         localStorage.setItem("searchQuery", searchValue);
 
-        window.location.href = './catalogue.html';
+        window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
     });
 
     document.getElementById('create-msg').addEventListener('click', function () {
@@ -51,6 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
             showMsgIframe.contentWindow.postMessage({ action: "updateShowMsgPopup", msgId }, "*");
             document.getElementById('read-msg').style.display = 'flex';
         }
+
+        if (event.data.action === "ShowEvtFromAll") {
+            let evtId = event.data.evtId;
+            showEvtIframe.contentWindow.postMessage({ action: "updateShowEvtPopup", evtId }, "*");
+            document.getElementById('read-event').style.display = 'flex';
+        }
     });
 
     msgList.addEventListener("click", (event) => {
@@ -75,6 +93,19 @@ document.addEventListener("DOMContentLoaded", function () {
     showAllMsg.addEventListener('click', function() {
         allMsgPopup.style.display = 'flex';
     });
+
+    let allEvtPopup = document.getElementById('all-event');
+    let showAllEvt = document.getElementById('see-all-evt-btn');
+
+    showAllEvt.addEventListener('click', function() {
+        allEvtPopup.style.display = 'flex';
+    });
+});
+
+window.addEventListener('message', function(event) {
+    if (event.data === 'iframe-updated') {
+        window.location.reload();
+    }
 });
 
 function createMessage(msg) {
@@ -121,4 +152,5 @@ function fillEvtList(evts){
         ${evts.map(evt => createEvent(evt))}
     `;
 }
+
 

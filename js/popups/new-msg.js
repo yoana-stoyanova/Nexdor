@@ -36,7 +36,7 @@ sendBtn.addEventListener('click', async function() {
     msgTitle.value = '';
     textarea.value = '';
     
-    document.getElementById('X-icon').click();
+    parent.postMessage('iframe-updated', '*');
     
 });
 

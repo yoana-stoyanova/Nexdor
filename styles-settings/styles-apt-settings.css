@@ -23,23 +23,19 @@
     display: flex;
     background-color: rgba(43, 39, 66, 0);
     font-family: 'Cyrillic';
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: auto;
+    width: 320px;
     z-index: 100;
+    outline: none;
 }
 
 #apt-settings {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 300px;
     height: 190px;
     align-self: center;
-    margin-left: auto;
-    margin-bottom: auto;
-    margin-top: 100px;
     margin-right: 50px;
     padding: 0;
     padding-top: 10px;
@@ -47,7 +43,9 @@
     background-color: #2B2742;
     border: white 1px solid;
     border-radius: 3px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+    outline: none;
+
 }
 
 #apt-settings .p {
@@ -62,6 +60,7 @@
     font-family:'Calibri';
     font-size: 20px;
     line-height: 1.2;
+    cursor: pointer;
 }
 
 #apt-settings button {
@@ -75,5 +74,5 @@
     border-radius: 5px;
     font-size: 20px;
     margin-right: 0;
-    
+    cursor: pointer;
 }

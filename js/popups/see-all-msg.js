@@ -36,7 +36,7 @@ delBtns.forEach(btn =>
             await updateBlockStorage();
             await updateAptStorage();
             
-            window.location.reload();
+            parent.postMessage('iframe-updated', '*');
         }
     })
 );

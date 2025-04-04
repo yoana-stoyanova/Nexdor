@@ -101,8 +101,7 @@ async function managerEnter(e) {
         return;
     }
 
-    //window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
-    window.location.href = './catalogue.html'
+    window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
 
 }
 
