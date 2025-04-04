@@ -9,7 +9,7 @@ export async function addBlock(newBlockData) {
       console.log("Block added successfully!");
 
       localStorage.setItem('position', 'manager');
-      localStorage.setItem('block', JSON.stringify(block));
+      localStorage.setItem('block', JSON.stringify(newBlockData));
       localStorage.setItem('id', id);
 
     } catch (error) {

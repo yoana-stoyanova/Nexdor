@@ -23,7 +23,7 @@ continueBtn.addEventListener('click', async function(e) {
     document.getElementById("part-one").style.display = "none";
     document.getElementById("part-two").style.display = "flex";
 
-    createBtn.addEventListener('click', function(e) {
+    createBtn.addEventListener('click', async function(e) {
         e.preventDefault();
 
         let num = document.getElementById('num').value;
@@ -48,12 +48,13 @@ continueBtn.addEventListener('click', async function(e) {
             apartments
         }
 
-        addBlock(block);
+        await addBlock(block);
 
-        console.log(localStorage.getItem('block', block));
+        console.log(localStorage.getItem('block'));
 
         setTimeout(() => {
-            window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
+            window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
+            // window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
         }, 100);
 
     });
