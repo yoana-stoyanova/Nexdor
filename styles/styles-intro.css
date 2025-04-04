@@ -51,11 +51,13 @@ body {
 
 #nav-bar h1 {
     margin-top: 15%;
+    cursor: pointer;
 }
 
 #logo {
     height: 55px;
     width: auto;
+    cursor: pointer;
 }
 
 main {
@@ -115,6 +117,7 @@ main {
     border-radius: 6px;
     font-size: 75%;
     margin-right: 0;
+    cursor: pointer;
 }
 
 #create-btn {
