@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', function(e){
     exitBlockBtn.addEventListener('click', function(e) {
         localStorage.clear();
         setTimeout(() => {
-            window.location.href = "../../catalogue.html?nocache=" + new Date().getTime();
+            window.location.href = "../../index.html?nocache=" + new Date().getTime();
           }, 100);
     })
 
