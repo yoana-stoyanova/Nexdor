@@ -8,9 +8,9 @@ export async function addBlock(newBlockData) {
       await setDoc(blockRef, newBlockData);
       console.log("Block added successfully!");
 
-      sessionStorage.setItem('position', 'manager');
-      sessionStorage.setItem('block', JSON.stringify(block));
-      sessionStorage.setItem('id', id);
+      localStorage.setItem('position', 'manager');
+      localStorage.setItem('block', JSON.stringify(block));
+      localStorage.setItem('id', id);
 
     } catch (error) {
       console.error("Error adding block:", error);

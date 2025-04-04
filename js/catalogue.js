@@ -1,7 +1,7 @@
 import { html, render } from 'https://cdn.skypack.dev/lit';
 import { position } from './get-block.js';
 
-let block = JSON.parse(sessionStorage.getItem('block'));
+let block = JSON.parse(localStorage.getItem('block'));
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log('loaded');
@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
         history.pushState({ search: input }, "", `?search=${input}`);
     });
 
-    let searchQuery = sessionStorage.getItem("searchQuery");
+    let searchQuery = localStorage.getItem("searchQuery");
     if (searchQuery) {
         inputField.value = searchQuery;
         searchBtn.click();
-        sessionStorage.removeItem('searchQuery');
+        localStorage.removeItem('searchQuery');
     }
 
     function createDoor(apt){
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (apt && aptList.contains(apt)) {
             const num = apt.getAttribute('id');
-            sessionStorage.setItem('apt-id', num);
+            localStorage.setItem('apt-id', num);
                 
             let x = event.clientX;
             let y = event.clientY;
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
             aptOptionsPopup.style.display = "none";
             aptOptionsPopup.style.opacity = "0";
 
-            sessionStorage.removeItem('apt-id');
+            localStorage.removeItem('apt-id');
         }
     });
 

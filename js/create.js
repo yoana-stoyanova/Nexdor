@@ -50,10 +50,12 @@ continueBtn.addEventListener('click', async function(e) {
 
         addBlock(block);
 
-        console.log(sessionStorage.getItem('block', block));
+        console.log(localStorage.getItem('block', block));
 
-        window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
-        
+        setTimeout(() => {
+            window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
+        }, 100);
+
     });
 
 });

@@ -1,14 +1,14 @@
 import { allBlocksArr } from "../db-config/firebaseFunctions.js";
 
-export let position = sessionStorage.getItem('position');
-export let blockId = sessionStorage.getItem('id');
+export let position = localStorage.getItem('position');
+export let blockId = localStorage.getItem('id');
 
 export async function updateBlockStorage(){
     let arr = await allBlocksArr();
     
     let block = arr.find(x => x.id == blockId);
 
-    sessionStorage.setItem('block', JSON.stringify(block));
+    localStorage.setItem('block', JSON.stringify(block));
     
     console.log('block updated');
     
@@ -19,11 +19,11 @@ export async function updateAptStorage() {
     
     let block = arr.find(x => x.id == blockId);
 
-    let oldApt = JSON.parse(sessionStorage.getItem('apt'));
+    let oldApt = JSON.parse(localStorage.getItem('apt'));
     let apt = block['apartments'].find(x => x.id == oldApt.id)
 
-    sessionStorage.setItem('block', JSON.stringify(block));
-    sessionStorage.setItem('apt', JSON.stringify(apt));
+    localStorage.setItem('block', JSON.stringify(block));
+    localStorage.setItem('apt', JSON.stringify(apt));
 
     console.log('apt updated');
 }

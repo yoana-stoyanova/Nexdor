@@ -28,9 +28,9 @@ window.addEventListener('DOMContentLoaded', function(e){
     });
 
     exitBlockBtn.addEventListener('click', function(e) {
-        sessionStorage.clear();
+        localStorage.clear();
         window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
     })
 
-    blockIdField.textContent = `(ID: ${sessionStorage.getItem('id')})`;
+    blockIdField.textContent = `(ID: ${localStorage.getItem('id')})`;
 });

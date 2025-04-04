@@ -1,7 +1,7 @@
 import { updateBlockPassword } from "../../db-config/firebaseFunctions.js";
 import { blockId as id, updateBlockStorage } from "../../js/get-block.js";
 
-let block = JSON.parse(sessionStorage.getItem('block'));
+let block = JSON.parse(localStorage.getItem('block'));
 
 let newPassField = document.getElementById('new-password');
 let passwordField = document.getElementById('old-password');

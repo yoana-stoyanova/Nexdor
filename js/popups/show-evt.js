@@ -1,5 +1,5 @@
-let block = JSON.parse(sessionStorage.getItem('block'));
-let apt = JSON.parse(sessionStorage.getItem('apt'));
+let block = JSON.parse(localStorage.getItem('block'));
+let apt = JSON.parse(localStorage.getItem('apt'));
 
 let title = document.querySelector('h1');
 let from = document.getElementById('ap');

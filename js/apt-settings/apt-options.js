@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', function(e){
     });
 
     exitAptBtn.addEventListener('click', function(e) {
-        sessionStorage.clear();
+        localStorage.clear();
         window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
     })
 

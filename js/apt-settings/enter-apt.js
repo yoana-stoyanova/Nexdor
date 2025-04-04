@@ -1,5 +1,5 @@
-let block = JSON.parse(sessionStorage.getItem('block'));
-let aptId = sessionStorage.getItem('apt-id');
+let block = JSON.parse(localStorage.getItem('block'));
+let aptId = localStorage.getItem('apt-id');
 
 document.addEventListener("DOMContentLoaded", function () {
     let passwordField = document.getElementById('password');
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if(passwordField.value != apt.password) return;
 
-        sessionStorage.setItem('apt', JSON.stringify(apt));
+        localStorage.setItem('apt', JSON.stringify(apt));
         
         window.location.href = "https://yoana-stoyanova.github.io/Nexdor/homepage.html";
     });

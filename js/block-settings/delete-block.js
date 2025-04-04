@@ -1,7 +1,7 @@
 import { deleteBlock } from "../../db-config/firebaseFunctions.js";
 import { blockId as id } from "../../js/get-block.js";
 
-let block = JSON.parse(sessionStorage.getItem('block'));
+let block = JSON.parse(localStorage.getItem('block'));
 
 let passwordField1 = document.getElementById('1-password');
 let passwordField2 = document.getElementById('2-password');
@@ -16,7 +16,7 @@ sendBtn.addEventListener('click', function(e) {
 
     deleteBlock(id);
 
-    sessionStorage.clear();
+    localStorage.clear();
 
     window.location.href = window.location.href = "https://yoana-stoyanova.github.io/Nexdor/index.html";;
 });

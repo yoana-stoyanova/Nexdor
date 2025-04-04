@@ -1,8 +1,8 @@
 import { addEventToApartments, addMessageToApartment } from '../../db-config/firebaseFunctions.js';
 import { updateAptStorage } from '../get-block.js';
 
-let block = JSON.parse(sessionStorage.getItem('block'));
-let apt = JSON.parse(sessionStorage.getItem('apt'));
+let block = JSON.parse(localStorage.getItem('block'));
+let apt = JSON.parse(localStorage.getItem('apt'));
 
 document.addEventListener("DOMContentLoaded", function () {
 
