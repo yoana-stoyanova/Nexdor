@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let searchValue = inputField.value;
         localStorage.setItem("searchQuery", searchValue);
 
-        window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
+        setTimeout(() => {
+            window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
+          }, 100);
     });
 
     document.getElementById('create-msg').addEventListener('click', function () {
@@ -104,7 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.addEventListener('message', function(event) {
     if (event.data === 'iframe-updated') {
-        window.location.reload();
+        setTimeout(() => {
+            window.location.href = window.location.pathname + "?nocache=" + new Date().getTime();
+          }, 100);
     }
 });
 

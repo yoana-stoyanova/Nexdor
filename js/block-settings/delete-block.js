@@ -18,5 +18,7 @@ sendBtn.addEventListener('click', function(e) {
 
     localStorage.clear();
 
-    window.location.href = window.location.href = "https://yoana-stoyanova.github.io/Nexdor/index.html";;
+    setTimeout(() => {
+        window.location.href = "./index.html?nocache=" + new Date().getTime();
+      }, 100);
 });

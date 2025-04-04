@@ -29,7 +29,9 @@ window.addEventListener('DOMContentLoaded', function(e){
 
     exitBlockBtn.addEventListener('click', function(e) {
         localStorage.clear();
-        window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
+        setTimeout(() => {
+            window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
+          }, 100);
     })
 
     blockIdField.textContent = `(ID: ${localStorage.getItem('id')})`;

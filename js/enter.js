@@ -75,7 +75,9 @@ async function memberEnter(e) {
         return;
     }
 
-    window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
+    setTimeout(() => {
+        window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
+      }, 100);
 
 }
 
@@ -101,7 +103,9 @@ async function managerEnter(e) {
         return;
     }
 
-    window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
+    setTimeout(() => {
+        window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
+      }, 100);
 
 }
 

@@ -14,7 +14,7 @@
     </section>
 
     <header id="nav-bar">
-        <div onClick="window.location.href='./index.html';">
+        <div onClick='window.location.href = "./index.html?nocache=" + new Date().getTime();'>
             <img id="logo" src="./icons/logo.png" alt="nexdor-logo">
             <h1>NEXDOR</h1>
         </div>
@@ -30,8 +30,8 @@
                     </p>
                 </div>
                 <div id="home-btns">
-                    <button id="create-btn" onClick="window.location.href='./create.html';">Създаване</button>
-                    <button id="enter-btn" onClick="window.location.href='./enter.html';">Вход</button>
+                    <button id="create-btn" onClick='window.location.href = "./create.html?nocache=" + new Date().getTime();'>Създаване</button>
+                    <button id="enter-btn" onClick='window.location.href = "./enter.html?nocache=" + new Date().getTime();'>Вход</button>
                 </div>
             </div>
 

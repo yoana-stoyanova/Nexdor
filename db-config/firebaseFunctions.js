@@ -95,7 +95,11 @@ export async function deleteBlock(blockId) {
     const blockRef = doc(db, "blocks", blockId);
     await deleteDoc(blockRef);
     console.log(`Block ${blockId} deleted successfully!`);
-    window.location.href = 'window.location.href = "https://yoana-stoyanova.github.io/Nexdor/index.html";';
+
+    setTimeout(() => {
+      window.location.href = "./index.html?nocache=" + new Date().getTime();
+    }, 100);
+
   } catch (error) {
     console.error("Error deleting block:", error);
   }
