@@ -68,9 +68,9 @@ async function memberEnter(e) {
     let block = arr.find(x => x.id == id && x.key == key);
 
     if(block){
-        localStorage.setItem('position', 'member');
-        localStorage.setItem('block', JSON.stringify(block));
-        localStorage.setItem('id', id);
+        sessionStorage.setItem('position', 'member');
+        sessionStorage.setItem('block', JSON.stringify(block));
+        sessionStorage.setItem('id', id);
     } else {
         return;
     }
@@ -94,9 +94,9 @@ async function managerEnter(e) {
     let block = arr.find(x => x.id == id && x.password == password);
 
     if(block){
-        localStorage.setItem('position', 'manager');
-        localStorage.setItem('block', JSON.stringify(block));
-        localStorage.setItem('id', id);
+        sessionStorage.setItem('position', 'manager');
+        sessionStorage.setItem('block', JSON.stringify(block));
+        sessionStorage.setItem('id', id);
     } else {
         return;
     }

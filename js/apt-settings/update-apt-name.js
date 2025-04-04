@@ -1,8 +1,8 @@
 import { updateAptName } from "../../db-config/firebaseFunctions.js";
 import { blockId as id, updateAptStorage, updateBlockStorage } from "../../js/get-block.js";
 
-let block = JSON.parse(localStorage.getItem('block'));
-let apt = JSON.parse(localStorage.getItem('apt'));
+let block = JSON.parse(sessionStorage.getItem('block'));
+let apt = JSON.parse(sessionStorage.getItem('apt'));
 
 let newNameField = document.getElementById('new-name');
 let passwordField = document.getElementById('password');

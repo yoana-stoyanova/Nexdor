@@ -1,7 +1,7 @@
 import { html, render } from 'https://cdn.skypack.dev/lit';
 
-let block = JSON.parse(localStorage.getItem('block'));
-let apt = JSON.parse(localStorage.getItem('apt'));
+let block = JSON.parse(sessionStorage.getItem('block'));
+let apt = JSON.parse(sessionStorage.getItem('apt'));
 
 document.addEventListener("DOMContentLoaded", function () {
     let inputField = document.getElementById("search-bar");
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log('clicked');
         
         let searchValue = inputField.value;
-        localStorage.setItem("searchQuery", searchValue);
+        sessionStorage.setItem("searchQuery", searchValue);
 
         window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
     });

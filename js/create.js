@@ -50,7 +50,7 @@ continueBtn.addEventListener('click', async function(e) {
 
         addBlock(block);
 
-        console.log(localStorage.getItem('block', block));
+        console.log(sessionStorage.getItem('block', block));
 
         window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
         

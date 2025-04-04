@@ -2,8 +2,8 @@ import { html, render } from 'https://cdn.skypack.dev/lit';
 import { deleteEvent } from '../../db-config/firebaseFunctions.js';
 import { updateAptStorage, updateBlockStorage } from '../get-block.js';
 
-let block = JSON.parse(localStorage.getItem('block'));
-let apt = JSON.parse(localStorage.getItem('apt'));
+let block = JSON.parse(sessionStorage.getItem('block'));
+let apt = JSON.parse(sessionStorage.getItem('apt'));
 
 let evtList = document.getElementById("all-event-list");
 render(fillEvtList(apt['events']), evtList);

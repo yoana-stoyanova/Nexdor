@@ -1,6 +1,6 @@
 import { html, render } from 'https://cdn.skypack.dev/lit';
 
-let block = JSON.parse(localStorage.getItem('block'));
+let block = JSON.parse(sessionStorage.getItem('block'));
 
 let aptPasswords = [];
 
