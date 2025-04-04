@@ -7,6 +7,11 @@ export async function addBlock(newBlockData) {
       const blockRef = doc(db, "blocks", newBlockData.id);
       await setDoc(blockRef, newBlockData);
       console.log("Block added successfully!");
+
+      localStorage.setItem('position', 'manager');
+      localStorage.setItem('block', JSON.stringify(block));
+      localStorage.setItem('id', id);
+      
     } catch (error) {
       console.error("Error adding block:", error);
     }
