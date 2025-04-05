@@ -1,5 +1,4 @@
 let block = JSON.parse(localStorage.getItem('block'));
-let aptId = localStorage.getItem('apt-id');
 
 console.log(block, aptId)
 document.addEventListener("DOMContentLoaded", function () {
@@ -8,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btn.addEventListener('click', function() {
         if(passwordField.value.trim() == '') return;
+        let aptId = localStorage.getItem('apt-id');
          
         let apt = block['apartments'][Number(aptId) - 1];
 
