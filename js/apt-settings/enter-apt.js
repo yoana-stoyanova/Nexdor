@@ -11,13 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
          
         let apt = block['apartments'][Number(aptId) - 1];
 
+        console.log(Number(aptId) - 1, apt);
+        
         if(passwordField.value != apt.password) return;
 
         localStorage.setItem('apt', JSON.stringify(apt));
         
         setTimeout(() => {
+
+            console.log('bruh');
+            
             window.location.href = "../../homepage.html?nocache=" + new Date().getTime();
-          }, 100);
+          }, 200);
     });
 
 });

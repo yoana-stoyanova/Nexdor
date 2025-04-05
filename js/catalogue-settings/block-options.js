@@ -30,12 +30,9 @@ window.addEventListener('DOMContentLoaded', function(e){
     exitBlockBtn.addEventListener('click', function(e) {
         localStorage.clear();
         setTimeout(() => {
-            window.location.replace("../../index.html?nocache=" + Date.now());
+            window.open("../../index.html?nocache=" + Date.now(), "_self");
           }, 100);
-
-        console.log(localStorage.getItem('block'));
-        
-    })
+    });
 
     blockIdField.textContent = `(ID: ${localStorage.getItem('id')})`;
 });

@@ -10,12 +10,12 @@ render(fillMsgList(apt['messages']), msgList);
 
 msgList.addEventListener("click", (event) => {
     if(event.target.getAttribute('class') == 'del-btn') return;
+    if(event.target.getAttribute('id') == 'all-msg-list') return;
 
     if(event.target.closest('div').getAttribute('class') == 'all-message'){
         let msgId = event.target.closest('div').getAttribute("id");
 
         console.log(`Id from aLL: ${msgId}`);
-        
         
         window.parent.postMessage({ action: "ShowMsgFromAll", msgId }, "*");
     }

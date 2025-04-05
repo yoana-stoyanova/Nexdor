@@ -23,6 +23,7 @@ let delBtns = document.querySelectorAll('.del-btn');
 delBtns.forEach(btn => 
     btn.addEventListener('click', async function(event) {
         if(event.target.getAttribute('class') != 'del-btn') return;
+        if(event.target.getAttribute('id') == 'all-event-list') return;
 
         console.log(event.target);
 

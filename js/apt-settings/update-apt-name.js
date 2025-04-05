@@ -14,7 +14,7 @@ sendBtn.addEventListener('click', async function(e) {
     const regex = /^.{2,}$/;
 
     if(regex.test(newNameField.value.trim()) == '') return;
-    if(passwordField.value != block['password']) return;
+    if(passwordField.value != apt['password']) return;
 
     updateAptName(id, apt['id'], newNameField.value);
 

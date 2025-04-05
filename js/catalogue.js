@@ -3,6 +3,8 @@ import { position } from './get-block.js';
 
 let block = JSON.parse(localStorage.getItem('block'));
 
+if(!block) window.open("../index.html?nocache=" + Date.now(), "_self");
+
 document.addEventListener("DOMContentLoaded", function () {
     console.log('loaded');
     console.log(block, 'aaa');
@@ -66,6 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (apt && aptList.contains(apt)) {
             const num = apt.getAttribute('id');
             localStorage.setItem('apt-id', num);
+            console.log(localStorage.getItem('apt-id'));
+            
                 
             let x = event.clientX;
             let y = event.clientY;

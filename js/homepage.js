@@ -3,6 +3,9 @@ import { html, render } from 'https://cdn.skypack.dev/lit';
 let block = JSON.parse(localStorage.getItem('block'));
 let apt = JSON.parse(localStorage.getItem('apt'));
 
+if(!block) window.open("../index.html?nocache=" + Date.now(), "_self");
+if(!apt) window.open("../catalogue.html?nocache=" + Date.now(), "_self");
+
 document.addEventListener("DOMContentLoaded", function () {
     let inputField = document.getElementById("search-bar");
     let searchBtn = document.getElementById("search-btn");

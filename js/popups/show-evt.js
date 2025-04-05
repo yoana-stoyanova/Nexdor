@@ -16,7 +16,7 @@ window.addEventListener("message", (event) => {
 
         title.textContent = evt['title'];
 
-        let fromApt = block['apartments'].find(x => x.id == message['from']);
+        let fromApt = block['apartments'].find(x => x.id == evt['from']);
         from.textContent = `ап. ${fromApt['id']} (${fromApt['name']})`;
 
         content.value = evt['content'];
