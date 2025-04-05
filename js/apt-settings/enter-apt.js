@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(Number(aptId) - 1, apt);
         
         if(passwordField.value != apt.password) {
-            console.log(passwordField.value, apt.password);
+            console.log(`"${passwordField.value}", "${apt.password}"`);
             
             return;
         }
