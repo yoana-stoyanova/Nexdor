@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let title = document.getElementById("block-apt")
     let aptList = document.getElementById("apt-list");
 
-    if(position == 'member') settingsBtn.style.display = 'none';
+    // if(position == 'member') {
+    //     settingsBtn.style.display = 'none';
+    // }
 
     title.textContent = `Бл. ${block["name"]} - Апартаменти`;
 

@@ -113,7 +113,7 @@ export async function addMessageToApartment(blockId, aptId, messageObj) {
     let blockData = blockSnap.data();
     let apartments = blockData.apartments || [];
     
-    let aptIndex = apartments.findIndex(apt => apt.id === aptId);
+    let aptIndex = aptId - 1;
     if (aptIndex === -1) {
       console.error("Apartment not found!");
       return;

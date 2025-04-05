@@ -16,7 +16,7 @@ continueBtn.addEventListener('click', async function(e) {
     if(arr.find(x => x.id == id)) taken = true;
     if(taken) return;
     
-    const regex = /^.{2,}$/;
+    const regex = /^.{6,}$/;
 
     if(!(regex.test(id.trim()) && regex.test(password.trim()) && password == rePass)) return;
 

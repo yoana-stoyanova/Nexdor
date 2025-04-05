@@ -30,7 +30,10 @@ sendBtn.addEventListener('click', async function() {
         content: textarea.value
     }
 
-    await addMessageToApartment(block.id, apt.id, message);
+    console.log(message.to);
+    
+
+    await addMessageToApartment(block.id, message.to, message);
     await updateAptStorage();  
 
     msgTitle.value = '';

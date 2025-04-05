@@ -11,7 +11,7 @@ let xBtn = document.getElementById('X-icon');
 newNameField.value = block['name'];
 
 sendBtn.addEventListener('click', async function(e) {
-    const regex = /^.{2,}$/;
+    const regex = /^.{6,}$/;
 
     if(regex.test(newNameField.value.trim()) == '') return;
     if(passwordField.value != block['password']) return;

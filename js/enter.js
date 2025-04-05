@@ -59,7 +59,7 @@ async function memberEnter(e) {
     
     let key = document.getElementById('key').value;
 
-    const regex = /^.{2,}$/;
+    const regex = /^.{6,}$/;
 
     if(!(regex.test(id.trim()) != '' && regex.test(key.trim()) != '')) return;
 
@@ -87,7 +87,7 @@ async function managerEnter(e) {
     let id = document.getElementById('id').value;
     let password = document.getElementById('password').value;
 
-    const regex = /^.{2,}$/;
+    const regex = /^.{6,}$/;
 
     if(!(regex.test(id.trim() )!= '' && regex.test(password.trim()) != '')) return;
 
