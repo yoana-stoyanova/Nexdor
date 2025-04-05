@@ -282,7 +282,7 @@ main {
 #apt-settings iframe {
     z-index: 1000;
     width: 40vw;
-    height: 30vh;
+    height: 40vh;
     outline: none;
     border: none;
 }

@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', function(e){
         localStorage.removeItem('apt');
         
         setTimeout(() => {
-            window.open("../../catalogue.html?nocache=" + Date.now(), "_self");
+            window.top.location.href = "../../catalogue.html?nocache=" + Date.now();
           }, 100);
     })
 
