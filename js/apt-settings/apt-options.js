@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function(e){
     exitAptBtn.addEventListener('click', function(e) {
         localStorage.removeItem('apt');
         
-        window.parent.postMessage('sendToIndex', '*');
+        window.parent.postMessage('sendToCatalogue', '*');
     })
 
 });

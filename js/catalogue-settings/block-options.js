@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', function(e) {
     }
 
     exitBlockBtn.addEventListener('click', function(e) {
-        localStorage.clear();
+        //localStorage.clear();
 
         window.parent.postMessage('sendToIndex', '*');
     });

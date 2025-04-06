@@ -161,7 +161,7 @@ function fillEvtList(evts){
 }
 
 window.addEventListener('message', (event) => {
-    if (event.data === 'sendToIndex') {
+    if (event.data === 'sendToCatalogue') {
         setTimeout(() => {
             window.open("../../catalogue.html?nocache=" + Date.now(), "_self");
           }, 100);
