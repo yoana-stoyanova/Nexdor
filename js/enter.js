@@ -64,7 +64,12 @@ async function memberEnter(e) {
 
     const regex = /^.{6,}$/;
 
-    if(!(regex.test(id.trim()) != '' && regex.test(key.trim()) != '')) return;
+    if(!(regex.test(id.trim()) != '' && regex.test(key.trim()) != '')) {
+        document.getElementById('id').style.border = 'red';
+        document.getElementById('key').style.border = 'red';
+
+        return;
+    };
 
     let arr = await allBlocksArr();
 
@@ -97,7 +102,12 @@ async function managerEnter(e) {
 
     const regex = /^.{6,}$/;
 
-    if(!(regex.test(id.trim() )!= '' && regex.test(password.trim()) != '')) return;
+    if(!(regex.test(id.trim() )!= '' && regex.test(password.trim()) != '')) {
+        document.getElementById('id').style.border = 'red';
+        document.getElementById('password').style.border = 'red';
+
+        return;
+    };
 
     let arr = await allBlocksArr();
 

@@ -3,9 +3,10 @@ import { html, render } from 'https://cdn.skypack.dev/lit';
 let position = localStorage.getItem('position');
 
 renderOptions(position);
-blockIdField.textContent = `(ID: ${localStorage.getItem(JSON.stringify('id'))})`;
 
 window.addEventListener('DOMContentLoaded', function(e){
+    blockIdField.textContent = `(ID: ${localStorage.getItem(JSON.stringify('id'))})`;
+    
     let exitBlockBtn = document.querySelector('button');
     let blockIdField = document.getElementById('block-id');
 
