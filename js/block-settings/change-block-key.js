@@ -9,7 +9,7 @@ let sendBtn = document.getElementById('send-btn');
 let xBtn = document.getElementById('X-icon');
 
 sendBtn.addEventListener('click', async function(e) {
-    const regex = /^.{6,}$/;
+    const regex = /^\S{6,25}$/
 
     if(regex.test(newKeyField.value.trim()) == '') return;
     if(passwordField.value != block['password']) return;

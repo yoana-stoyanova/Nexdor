@@ -62,7 +62,7 @@ async function memberEnter(e) {
     
     let key = document.getElementById('key').value;
 
-    const regex = /^.{6,}$/;
+    const regex = /^\S{6,25}$/
 
     if(!(regex.test(id.trim()) != '' && regex.test(key.trim()) != '')) {
         document.getElementById('id').style.border = 'red';
@@ -100,7 +100,7 @@ async function managerEnter(e) {
     let id = document.getElementById('id').value;
     let password = document.getElementById('password').value;
 
-    const regex = /^.{6,}$/;
+    const regex = /^\S{6,25}$/
 
     if(!(regex.test(id.trim() )!= '' && regex.test(password.trim()) != '')) {
         document.getElementById('id').style.border = 'red';

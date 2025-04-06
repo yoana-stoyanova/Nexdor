@@ -11,7 +11,7 @@ let sendBtn = document.getElementById('send-btn');
 newNameField.value = apt['name'];
 
 sendBtn.addEventListener('click', async function(e) {
-    const regex = /^.{6,}$/;
+    const regex = /^\S{6,25}$/
 
     if(regex.test(newNameField.value.trim()) == '') return;
     if(passwordField.value != apt['password']) return;

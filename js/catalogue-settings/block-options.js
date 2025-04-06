@@ -5,10 +5,10 @@ let position = localStorage.getItem('position');
 renderOptions(position);
 
 window.addEventListener('DOMContentLoaded', function(e){
-    blockIdField.textContent = `(ID: ${localStorage.getItem(JSON.stringify('id'))})`;
-    
-    let exitBlockBtn = document.querySelector('button');
     let blockIdField = document.getElementById('block-id');
+    blockIdField.textContent = `(ID: ${localStorage.getItem(JSON.stringify('id'))})`;
+
+    let exitBlockBtn = document.querySelector('button');
 
     if(position == "manager") {
         let changeBlockNameBtn = document.getElementById('change-block-name');
