@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('message', (event) => {
         if (event.data === 'sendToIndex') {
             setTimeout(() => {
-                window.open("../../index.html?nocache=" + Date.now(), "_self");
+                window.location.href = 'https://yoana-stoyanova.github.io/Nexdor/';
               }, 100);
         }
       });

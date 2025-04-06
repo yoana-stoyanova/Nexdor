@@ -163,7 +163,7 @@ function fillEvtList(evts){
 window.addEventListener('message', (event) => {
     if (event.data === 'sendToCatalogue') {
         setTimeout(() => {
-            window.open("../../catalogue.html?nocache=" + Date.now(), "_self");
+            window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
           }, 100);
     }
   });
