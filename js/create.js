@@ -33,8 +33,8 @@ continueBtn.addEventListener('click', async function(e) {
         if(!num.trim()) return;
 
         if(!(regex.test(key.trim()) && key == reKey)) {
-            document.getElementById('key').style.border = 'red';
-            document.getElementById('re-key').style.border = 'red';
+            document.getElementById('key').style.border.color = 'red';;
+            document.getElementById('re-key').style.border.color = 'red';;
 
             return;
         }

@@ -65,8 +65,8 @@ async function memberEnter(e) {
     const regex = /^\S{6,25}$/
 
     if(!(regex.test(id.trim()) != '' && regex.test(key.trim()) != '')) {
-        document.getElementById('id').style.border = 'red';
-        document.getElementById('key').style.border = 'red';
+        document.getElementById('id').style.border.color = 'red';;
+        document.getElementById('key').style.border.color = 'red';;
 
         return;
     };
@@ -80,8 +80,8 @@ async function memberEnter(e) {
         localStorage.setItem('block', JSON.stringify(block));
         localStorage.setItem('id', id);
     } else {
-        document.getElementById('id').style.border = 'red';
-        document.getElementById('key').style.border = 'red';
+        document.getElementById('id').style.border.color = 'red';;
+        document.getElementById('key').style.border.color = 'red';;
 
         return;
     }
@@ -103,8 +103,8 @@ async function managerEnter(e) {
     const regex = /^\S{6,25}$/
 
     if(!(regex.test(id.trim() )!= '' && regex.test(password.trim()) != '')) {
-        document.getElementById('id').style.border = 'red';
-        document.getElementById('password').style.border = 'red';
+        document.getElementById('id').style.border.color = 'red';;
+        document.getElementById('password').style.border.color = 'red';;
 
         return;
     };
@@ -118,8 +118,8 @@ async function managerEnter(e) {
         localStorage.setItem('block', JSON.stringify(block));
         localStorage.setItem('id', id);
     } else {
-        document.getElementById('id').style.border = 'red';
-        document.getElementById('password').style.border = 'red';
+        document.getElementById('id').style.border.color = 'red';;
+        document.getElementById('password').style.border.color = 'red';;
 
         return;
     }
