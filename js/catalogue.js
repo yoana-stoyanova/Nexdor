@@ -1,6 +1,7 @@
 import { html, render } from 'https://cdn.skypack.dev/lit';
 import { position } from './get-block.js';
 
+
 let block = JSON.parse(localStorage.getItem('block'));
 
 if(!block) window.open("../index.html?nocache=" + Date.now(), "_self");
