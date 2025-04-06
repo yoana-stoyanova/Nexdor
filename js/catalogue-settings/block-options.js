@@ -3,6 +3,7 @@ import { html, render } from 'https://cdn.skypack.dev/lit';
 let position = localStorage.getItem('position');
 
 renderOptions(position);
+blockIdField.textContent = `(ID: ${localStorage.getItem(JSON.stringify('id'))})`;
 
 window.addEventListener('DOMContentLoaded', function(e){
     let exitBlockBtn = document.querySelector('button');
@@ -42,8 +43,7 @@ window.addEventListener('DOMContentLoaded', function(e){
             window.open("../../index.html?nocache=" + Date.now(), "_self");
           }, 100);
     });
-
-    blockIdField.textContent = `(ID: ${localStorage.getItem('id')})`;
+    
 });
 
 function renderOptions(pos){

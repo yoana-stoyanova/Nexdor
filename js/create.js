@@ -30,7 +30,14 @@ continueBtn.addEventListener('click', async function(e) {
         let key = document.getElementById('key').value;
         let reKey = document.getElementById('re-key').value;  
 
-        if(!(num.trim() && regex.test(key.trim()) && key == reKey)) return;
+        if(!num.trim()) return;
+
+        if(!(regex.test(key.trim()) && key == reKey)) {
+            document.getElementById('key').style.border = 'red';
+            document.getElementById('re-key').style.border = 'red';
+
+            return;
+        }
 
         let apartments = Array.from({ length: num }, (_, i) => ({
             id: i + 1,

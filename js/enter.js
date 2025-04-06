@@ -72,6 +72,9 @@ async function memberEnter(e) {
         localStorage.setItem('block', JSON.stringify(block));
         localStorage.setItem('id', id);
     } else {
+        document.getElementById('id').style.border = 'red';
+        document.getElementById('key').style.border = 'red';
+
         return;
     }
 
@@ -100,6 +103,9 @@ async function managerEnter(e) {
         localStorage.setItem('block', JSON.stringify(block));
         localStorage.setItem('id', id);
     } else {
+        document.getElementById('id').style.border = 'red';
+        document.getElementById('password').style.border = 'red';
+
         return;
     }
 
