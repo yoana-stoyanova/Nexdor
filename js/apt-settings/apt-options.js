@@ -15,9 +15,7 @@ window.addEventListener('DOMContentLoaded', function(e){
     exitAptBtn.addEventListener('click', function(e) {
         localStorage.removeItem('apt');
         
-        setTimeout(() => {
-            window.top.location.href = "../../catalogue.html?nocache=" + Date.now();
-          }, 100);
+        window.parent.postMessage('sendToIndex', '*');
     })
 
 });

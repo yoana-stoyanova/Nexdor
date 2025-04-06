@@ -4,7 +4,7 @@ let position = localStorage.getItem('position');
 
 renderOptions(position);
 
-window.addEventListener('DOMContentLoaded', function(e){
+window.addEventListener('DOMContentLoaded', function(e) {
     let exitBlockBtn = document.querySelector('button');
 
     if(position == "manager") {
@@ -37,9 +37,8 @@ window.addEventListener('DOMContentLoaded', function(e){
 
     exitBlockBtn.addEventListener('click', function(e) {
         localStorage.clear();
-        setTimeout(() => {
-            window.open("../../index.html?nocache=" + Date.now(), "_self");
-          }, 100);
+
+        window.parent.postMessage('sendToIndex', '*');
     });
     
 });

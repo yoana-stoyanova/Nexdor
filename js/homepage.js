@@ -160,4 +160,11 @@ function fillEvtList(evts){
     `;
 }
 
+window.addEventListener('message', (event) => {
+    if (event.data === 'sendToIndex') {
+        setTimeout(() => {
+            window.open("../../catalogue.html?nocache=" + Date.now(), "_self");
+          }, 100);
+    }
+  });
 
