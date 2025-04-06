@@ -5,9 +5,6 @@ let position = localStorage.getItem('position');
 renderOptions(position);
 
 window.addEventListener('DOMContentLoaded', function(e){
-    let blockIdField = document.getElementById('block-id');
-    blockIdField.textContent = `(ID: ${localStorage.getItem(JSON.stringify('id'))})`;
-
     let exitBlockBtn = document.querySelector('button');
 
     if(position == "manager") {
@@ -56,12 +53,10 @@ function renderOptions(pos){
         <p class="p" id="delete-block">Изтриване на блока</p>
         
         <button>Изход</button>
-        <p id="block-id"></p>
     `;
 
     let memberTemplate = html`
         <button>Изход</button>
-        <p id="block-id"></p>
     `;
 
     if(pos == 'manager') render(managerTemplate, document.getElementById('block-settings'));
