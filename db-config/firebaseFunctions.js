@@ -186,13 +186,12 @@ export async function deleteEvent(blockId, aptId, evtId) {
     let blockData = blockSnap.data();
     let apartments = blockData.apartments || [];
 
-    let aptIndex = apartments.findIndex(a => a.id === aptId);
-    if (aptIndex === -1) {
+    if (aptId - 1 === -1) {
         console.error("Apartment not found");
         return;
     }
 
-    apartments[aptIndex].events = apartments[aptIndex].events.filter(evt => evt.id !== evtId);
+    apartments[aptId - 1].events = apartments[aptId - 1].events.filter(evt => evt.id !== evtId);
 
     await updateDoc(blockRef, { apartments });
 

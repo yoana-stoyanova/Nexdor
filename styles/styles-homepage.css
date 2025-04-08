@@ -272,7 +272,7 @@ main {
 }
 
 #apt-settings {
-    width: 20vw;
+    width: 25vw;
     height: auto;
     margin-top: 90px;
     right: 0;
@@ -281,7 +281,7 @@ main {
 
 #apt-settings iframe {
     z-index: 1000;
-    width: 40vw;
+    width: 33vw;
     height: 40vh;
     outline: none;
     border: none;

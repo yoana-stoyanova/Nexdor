@@ -18,7 +18,26 @@ continueBtn.addEventListener('click', async function(e) {
     
     const regex = /^\S{6,25}$/
 
-    if(!(regex.test(id.trim()) && regex.test(password.trim()) && password == rePass)) return;
+    if(!(regex.test(id.trim()))) {
+        document.getElementById('id').style.borderColor = 'red';
+        return;
+    } else {
+        document.getElementById('id').style.borderColor = '#2B2742';
+    }
+
+    if(!(regex.test(password.trim()))) {
+        document.getElementById('password').style.borderColor = 'red';
+        return;
+    } else {
+        document.getElementById('password').style.borderColor = '#2B2742';
+    }
+
+    if(!(password == rePass)) {
+        document.getElementById('re-pass').style.borderColor = 'red';
+        return;
+    } else {
+        document.getElementById('re-pass').style.borderColor = '#2B2742';
+    }
 
     document.getElementById("part-one").style.display = "none";
     document.getElementById("part-two").style.display = "flex";
@@ -30,18 +49,30 @@ continueBtn.addEventListener('click', async function(e) {
         let key = document.getElementById('key').value;
         let reKey = document.getElementById('re-key').value;  
 
-        if(!num.trim()) return;
-
-        if(!(regex.test(key.trim()) && key == reKey)) {
-            document.getElementById('key').style.border.color = 'red';;
-            document.getElementById('re-key').style.border.color = 'red';;
-
+        if(!num.trim()) {
+            document.getElementById('num').style.borderColor = 'red';
             return;
+        } else {
+            document.getElementById('num').style.borderColor = '#2B2742';
+        }
+
+        if(!(regex.test(key.trim()))) {
+            document.getElementById('key').style.borderColor = 'red';
+            return;
+        } else {
+            document.getElementById('key').style.borderColor = '#2B2742';
+        }
+
+        if(key != reKey) {
+            document.getElementById('re-key').style.borderColor = 'red';
+            return;
+        } else {
+            document.getElementById('re-key').style.borderColor = '#2B2742';
         }
 
         let apartments = Array.from({ length: num }, (_, i) => ({
             id: i + 1,
-            name: `${i + 1}`,
+            name: `Няма име`,
             password: generatePassword(),
             messages: [],
             events: []
@@ -49,7 +80,7 @@ continueBtn.addEventListener('click', async function(e) {
 
         let block = {
             id,
-            name: `"${id}"`,
+            name: `(Блокът няма име)`,
             password,
             key,
             apartments

@@ -19,8 +19,14 @@ sendBtn.addEventListener('click', async function() {
     let titleRegex = /^.{1,70}$/;
     let msgRegex = /^.{1,2000}$/;
     
-    if(!titleRegex.test(msgTitle.value)) return;
-    if(!msgRegex.test(textarea.value)) return;
+    if(!titleRegex.test(msgTitle.value)) {
+        msgTitle.style.borderColor = 'red';
+        return;
+    };
+    if(!msgRegex.test(textarea.value)) {
+        textarea.style.borderColor = 'red';
+        return;
+    };
 
     let message = {
         id: generateId(),

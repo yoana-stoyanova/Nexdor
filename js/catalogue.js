@@ -1,6 +1,4 @@
 import { html, render } from 'https://cdn.skypack.dev/lit';
-import { position } from './get-block.js';
-
 
 let block = JSON.parse(localStorage.getItem('block'));
 
@@ -16,9 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let title = document.getElementById("block-apt")
     let aptList = document.getElementById("apt-list");
 
-    // if(position == 'member') {
-    //     settingsBtn.style.display = 'none';
-    // }
+    let blockSettingsPopup = document.getElementById('settings-popup');
 
     title.textContent = `Бл. ${block["name"]} - Апартаменти`;
 
@@ -71,24 +67,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (apt && aptList.contains(apt)) {
             const num = apt.getAttribute('id');
             localStorage.setItem('apt-id', num);
-            console.log(localStorage.getItem('apt-id'));
-            
+            console.log(localStorage.getItem('apt-id')); 
                 
-            let x = event.clientX;
-            let y = event.clientY;
-            const popupWidth = aptOptionsPopup.offsetWidth;
-            const popupHeight = aptOptionsPopup.offsetHeight;
-
-            if (x + popupWidth > window.innerWidth) x = window.innerWidth - popupWidth - 10;
-            if (x < 10) x = 10;
-            if (y + popupHeight > window.innerHeight) y = window.innerHeight - popupHeight - 10;
-            if (y < popupHeight + 10) y = popupHeight + 10;
+            let x = event.pageX;
+            let y = event.pageY;
             
             console.log("Clicked an apt! Position:", x, y);
 
             aptOptionsPopup.style.position = "absolute";
             aptOptionsPopup.style.left = `${x}px`;
-            aptOptionsPopup.style.top = `${y - 30}px`;
+            aptOptionsPopup.style.top = `${y}px`;
     
             aptOptionsPopup.style.display = "block"; 
             aptOptionsPopup.style.opacity = "1";
@@ -131,17 +119,18 @@ document.addEventListener("DOMContentLoaded", function () {
             inputField.value = event.data.value;
             searchBtn.click();
         }
+
+        if(event.data === "hideSettings") blockSettingsPopup.style.display = 'none';
     });
 
-    settingsBtn.addEventListener('click', function(e) {
-        let blockSettingsPopup = document.getElementById('settings-popup');
-
-        if(blockSettingsPopup.style.display != 'flex'){
+    settingsBtn.addEventListener('click', function(e) { //block settings
+        if(blockSettingsPopup.style.display != 'flex') {
             blockSettingsPopup.style.display = 'flex';
+            return;
         }
-        else {
-            blockSettingsPopup.style.display = 'none';
-        }
+
+        blockSettingsPopup.style.display = 'none';
+        
     });
 
     window.addEventListener('message', function(event) {

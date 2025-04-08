@@ -13,17 +13,26 @@ document.addEventListener("DOMContentLoaded", function () {
     let title = document.getElementById('block-apt');
     let msgList = document.getElementById('messages');
     let evtList = document.getElementById('event');
+    let aptSettingsPopup = document.getElementById('apt-settings');
 
     settingsBtn.addEventListener('click', function(e) {
-        let aptSettingsPopup = document.getElementById('apt-settings');
-
         if(aptSettingsPopup.style.display != 'flex'){
+            console.log('open');
+            
             aptSettingsPopup.style.display = 'flex';
         }
         else {
             aptSettingsPopup.style.display = 'none';
         }
     });
+
+    window.addEventListener('click', function(e) {
+        if(e.target.getAttribute('id') == 'apt-settings') return;
+        if(e.target.getAttribute('id') == 'settings-icon') return;
+        console.log('apt click');
+        
+        aptSettingsPopup.style.display = 'none';
+    })
 
     title.textContent = `Бл. ${block.name} - ап. ${apt.id} (${apt.name})`;
     render(fillMsgList(apt['messages']), msgList);
@@ -163,8 +172,10 @@ function fillEvtList(evts){
 window.addEventListener('message', (event) => {
     if (event.data === 'sendToCatalogue') {
         setTimeout(() => {
-            window.location.href = "../catalogue.html?nocache=" + new Date().getTime();
+            window.location.href = "../../catalogue.html?nocache=" + new Date().getTime();
           }, 100);
     }
+
+    
   });
 

@@ -14,8 +14,15 @@ sendBtn.addEventListener('click', async function() {
     let titleRegex = /^.{1,70}$/;
     let evtRegex = /^.{1,2000}$/;
     
-    if(!titleRegex.test(evtTitle.value)) return;
-    if(!evtRegex.test(textarea.value)) return;
+    if(!titleRegex.test(evtTitle.value)) {
+        evtTitle.style.borderColor = 'red';
+        return;
+    }
+
+    if(!evtRegex.test(textarea.value)) {
+        evtRegex.style.borderColor = 'red';
+        return;
+    }
 
     let event = {
         id: generateId(),

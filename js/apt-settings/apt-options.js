@@ -16,6 +16,6 @@ window.addEventListener('DOMContentLoaded', function(e){
         localStorage.removeItem('apt');
         
         window.parent.postMessage('sendToCatalogue', '*');
-    })
+    });
 
 });

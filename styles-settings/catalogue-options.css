@@ -33,6 +33,7 @@
     border: white 1px solid;
     border-radius: 3px;
     filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.7));
+    pointer-events: none;
 }
 
 #apt-settings p {
@@ -46,6 +47,7 @@
     font-size: 20px;
     line-height: 1.2;
     cursor: pointer;
+    pointer-events: auto;
 }
 
 button {
@@ -59,4 +61,5 @@ button {
     border: 1px white solid;
     border-radius: 3px;
     cursor: pointer;
+    pointer-events: auto;
 }

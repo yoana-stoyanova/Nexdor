@@ -21,6 +21,7 @@
 
 #popup-body {
     display: flex;
+    flex-direction: row;
     background-color: rgba(43, 39, 66, 0);
     font-family: 'Cyrillic';
     height: auto;
@@ -35,8 +36,10 @@
     flex-direction: column;
     width: 300px;
     height: 190px;
-    align-self: center;
-    margin-right: 50px;
+    align-self: flex-end;
+    right: 0;
+    margin: 0;
+    margin-left: auto;
     padding: 0;
     padding-top: 10px;
     color: white;

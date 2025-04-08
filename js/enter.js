@@ -67,11 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const regex = /^\S{6,25}$/
 
         if(!(regex.test(id.trim()) != '' && regex.test(key.trim()) != '')) {
-            document.getElementById('id').style.border.color = 'red';;
-            document.getElementById('key').style.border.color = 'red';;
+            document.getElementById('id').style.borderColor = 'red';
+            document.getElementById('key').style.borderColor = 'red';
 
             return;
-        };
+        }
 
         let arr = await allBlocksArr();
 
@@ -86,8 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
             }, 100);
         } else {
-            document.getElementById('id').style.border.color = 'red';;
-            document.getElementById('key').style.border.color = 'red';;
+            document.getElementById('id').style.borderColor = 'red';
+            document.getElementById('key').style.borderColor = 'red';
 
             return;
         }
@@ -105,8 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const regex = /^\S{6,25}$/
 
         if(!(regex.test(id.trim() )!= '' && regex.test(password.trim()) != '')) {
-            document.getElementById('id').style.border.color = 'red';;
-            document.getElementById('password').style.border.color = 'red';;
+            document.getElementById('id').style.borderColor = 'red';;
+            document.getElementById('password').style.borderColor = 'red';;
 
             return;
         };
@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
             }, 100);
         } else {
-            document.getElementById('id').style.border.color = 'red';;
-            document.getElementById('password').style.border.color = 'red';;
+            document.getElementById('id').style.borderColor = 'red';;
+            document.getElementById('password').style.borderColor = 'red';;
 
             return;
         }

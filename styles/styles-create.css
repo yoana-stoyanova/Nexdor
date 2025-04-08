@@ -142,6 +142,7 @@ main {
     border-radius: 4px;
     color: white;
     background-color: #2B2742;
+    cursor: pointer;
 }
 
 .register-form p {

@@ -77,12 +77,14 @@ h1 {
 #all-msg-list {
     width: 90%;
     height: 60vh;
+    display: flex;
+    flex-direction: column;
     align-self: center;
     padding-right: 2%;
     overflow: auto;
     background-color: white;
     align-items: center;
-
+    z-index: 1000;
     scrollbar-color: #2B2742;
 }
 

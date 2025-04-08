@@ -35,9 +35,13 @@ window.addEventListener('DOMContentLoaded', function(e) {
         });
     }
 
-    exitBlockBtn.addEventListener('click', function(e) {
-        //localStorage.clear();
+    window.addEventListener('click', function (e) {
+        if(e.target.getAttribute('id') == 'block-settings') return;
+        window.parent.postMessage('hideSettings', '*');
+        
+    });
 
+    exitBlockBtn.addEventListener('click', function(e) {
         window.parent.postMessage('sendToIndex', '*');
     });
     
