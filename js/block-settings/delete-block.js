@@ -1,5 +1,4 @@
 import { deleteBlock } from "../../db-config/firebaseFunctions.js";
-import { blockId as id } from "../../js/get-block.js";
 
 let block = JSON.parse(localStorage.getItem('block'));
 
@@ -8,17 +7,17 @@ let passwordField2 = document.getElementById('2-password');
 let sendBtn = document.getElementById('send-btn');
 let xBtn = document.getElementById('X-icon');
 
-sendBtn.addEventListener('click', function(e) {
+sendBtn.addEventListener('click', async function(e) {
     const regex = /^\S{6,25}$/
 
     if(passwordField1.value != block['password']) return;
     if(passwordField2.value != block['password']) return;
 
-    deleteBlock(id);
+    await deleteBlock(block.id);
 
     localStorage.clear();
 
     setTimeout(() => {
-        window.location.href = "./index.html?nocache=" + new Date().getTime();
+        window.location.href = "../../index.html?nocache=" + new Date().getTime();
       }, 100);
 });

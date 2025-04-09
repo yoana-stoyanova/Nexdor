@@ -76,7 +76,7 @@
 .field {
     display: flex;
     flex-direction: row;
-    width: 950px;
+    width: 91%;
     height: 50px;
     align-self: center;
     align-items: center;
@@ -122,7 +122,7 @@ select {
 }
 
 #msg {
-    width: 920px;
+    width: 89%;
     height: 210px !important;
     resize: none;
     align-self: center;

@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('message', function(event) {
         if (event.data === 'iframe-updated') {
             setTimeout(() => {
-            window.location.href = window.location.pathname + "?nocache=" + new Date().getTime();
+            window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
             }, 100);
         }
     });

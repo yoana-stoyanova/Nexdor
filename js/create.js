@@ -88,11 +88,14 @@ continueBtn.addEventListener('click', async function(e) {
 
         await addBlock(block);
 
-        console.log(localStorage.getItem('block'));
+        localStorage.setItem('position', 'manager');
+        localStorage.setItem('block', JSON.stringify(block));
+        localStorage.setItem('id', id);
+
+        console.log(JSON.parse(localStorage.getItem('block')));
 
         setTimeout(() => {
             window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
-            // window.location.href = "https://yoana-stoyanova.github.io/Nexdor/catalogue.html";
         }, 100);
 
     });

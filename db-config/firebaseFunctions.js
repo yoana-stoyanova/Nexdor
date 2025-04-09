@@ -8,10 +8,6 @@ export async function addBlock(newBlockData) {
       await setDoc(blockRef, newBlockData);
       console.log("Block added successfully!");
 
-      localStorage.setItem('position', 'manager');
-      localStorage.setItem('block', JSON.stringify(newBlockData));
-      localStorage.setItem('id', id);
-
     } catch (error) {
       console.error("Error adding block:", error);
     }
@@ -97,7 +93,7 @@ export async function deleteBlock(blockId) {
     console.log(`Block ${blockId} deleted successfully!`);
 
     setTimeout(() => {
-      window.location.href = "./index.html?nocache=" + new Date().getTime();
+      window.location.href = "../../index.html?nocache=" + new Date().getTime();
     }, 100);
 
   } catch (error) {
