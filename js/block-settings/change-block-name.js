@@ -9,7 +9,6 @@ let sendBtn = document.getElementById('send-btn');
 
 sendBtn.addEventListener('click', async function(e) {
     const regex = /^\S{6,25}$/;
-    console.log(block);
 
     if(regex.test(newNameField.value.trim()) == '') return;
     if(passwordField.value != block['password']) return;
