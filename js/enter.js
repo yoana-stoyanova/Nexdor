@@ -1,6 +1,5 @@
 import { html, render } from 'https://cdn.skypack.dev/lit';
 import { allBlocksArr } from '../db-config/firebaseFunctions.js';
-console.log('load1');
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -58,8 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     async function memberEnter(e) {
         e.preventDefault();
 
-        console.log('load2');
-
         let id = document.getElementById('id').value;
         
         let key = document.getElementById('key').value;
@@ -96,8 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function managerEnter(e) {
         e.preventDefault();
-
-        console.log('load3');
 
         let id = document.getElementById('id').value;
         let password = document.getElementById('password').value;

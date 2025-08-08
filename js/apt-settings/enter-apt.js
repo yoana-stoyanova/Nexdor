@@ -10,11 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if(passwordField.value.trim() == '') return;
         
         let apt = block['apartments'][Number(aptId) - 1];
-
-        console.log(Number(aptId) - 1, apt);
         
         if(passwordField.value.trim() != apt.password) {
-            console.log(`"${passwordField.value.trim()}", "${apt.password}"`);
             
             return;
         }
@@ -22,8 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem('apt', JSON.stringify(apt));
         
         setTimeout(() => {
-
-            console.log('bruh');
             
             window.location.href = "../../homepage.html?nocache=" + new Date().getTime();
           }, 200);

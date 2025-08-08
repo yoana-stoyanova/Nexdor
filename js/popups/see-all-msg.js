@@ -14,8 +14,6 @@ msgList.addEventListener("click", (event) => {
 
     if(event.target.closest('div').getAttribute('class') == 'all-message'){
         let msgId = event.target.closest('div').getAttribute("id");
-
-        console.log(`Id from aLL: ${msgId}`);
         
         window.parent.postMessage({ action: "ShowMsgFromAll", msgId }, "*");
     }
@@ -29,7 +27,6 @@ delBtns.forEach(btn =>
 
         if(event.target.closest('div').getAttribute('class') == 'all-message'){
             let msgId = event.target.closest('div').getAttribute("id");
-            console.log(msgId);
 
             await deleteMessage(block.id, apt.id, msgId);
 

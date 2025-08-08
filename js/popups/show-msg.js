@@ -8,11 +8,8 @@ let content = document.getElementById('msg');
 window.addEventListener("message", (event) => {
     if (event.data.action === "updateShowMsgPopup") {
         let msgId = event.data.msgId;
-        console.log("Received ID in iframe:", event.data.msgId);
 
         let message = apt['messages'].find(x => x.id == msgId);
-
-        console.log(message);
 
         title.textContent = message['title'];
 

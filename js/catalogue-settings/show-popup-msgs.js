@@ -37,7 +37,6 @@ window.addEventListener("message", (event) => {
     if (event.data.action === "showEnterPopup") {
         let popup = document.getElementById("apt-enter-popup");
         if (popup) {
-            console.log(localStorage.getItem('apt-id'));
             popup.style.display = "flex";
         }
     }

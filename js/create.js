@@ -92,8 +92,6 @@ continueBtn.addEventListener('click', async function(e) {
         localStorage.setItem('block', JSON.stringify(block));
         localStorage.setItem('id', id);
 
-        console.log(JSON.parse(localStorage.getItem('block')));
-
         setTimeout(() => {
             window.location.href = "./catalogue.html?nocache=" + new Date().getTime();
         }, 100);

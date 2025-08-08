@@ -35,8 +35,6 @@ sendBtn.addEventListener('click', async function() {
         title: msgTitle.value,
         content: textarea.value
     }
-
-    console.log(message.to);
     
 
     await addMessageToApartment(block.id, message.to, message);

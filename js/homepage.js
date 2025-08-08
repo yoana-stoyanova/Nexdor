@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     settingsBtn.addEventListener('click', function(e) {
         if(aptSettingsPopup.style.display != 'flex'){
-            console.log('open');
             
             aptSettingsPopup.style.display = 'flex';
         }
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('click', function(e) {
         if(e.target.getAttribute('id') == 'apt-settings') return;
         if(e.target.getAttribute('id') == 'settings-icon') return;
-        console.log('apt click');
         
         aptSettingsPopup.style.display = 'none';
     })
@@ -40,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let apts = block["apartments"];
     searchBtn.addEventListener("click", function () {
-        console.log('clicked');
         
         let searchValue = inputField.value;
         localStorage.setItem("searchQuery", searchValue);

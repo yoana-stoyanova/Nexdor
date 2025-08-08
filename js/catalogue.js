@@ -5,8 +5,7 @@ let block = JSON.parse(localStorage.getItem('block'));
 if(!block) window.open("../index.html?nocache=" + Date.now(), "_self");
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log('loaded');
-    console.log(block, 'aaa');
+
 
     let settingsBtn = document.getElementById("profile-icon");
     let inputField = document.getElementById("search-bar");
@@ -67,12 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (apt && aptList.contains(apt)) {
             const num = apt.getAttribute('id');
             localStorage.setItem('apt-id', num);
-            console.log(localStorage.getItem('apt-id')); 
                 
             let x = event.pageX;
             let y = event.pageY;
-            
-            console.log("Clicked an apt! Position:", x, y);
 
             aptOptionsPopup.style.position = "absolute";
             aptOptionsPopup.style.left = `${x}px`;
@@ -82,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
             aptOptionsPopup.style.opacity = "1";
         } 
         else if (!aptOptionsPopup.contains(event.target)) {
-            console.log("Clicked outside, hiding popup");
             aptOptionsPopup.style.display = "none";
             aptOptionsPopup.style.opacity = "0";
 

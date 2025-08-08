@@ -10,8 +10,6 @@ export async function updateBlockStorage(){
 
     localStorage.setItem('block', JSON.stringify(block));
     
-    console.log('block updated');
-    
 }
 
 export async function updateAptStorage() {
@@ -24,8 +22,6 @@ export async function updateAptStorage() {
 
     localStorage.setItem('block', JSON.stringify(block));
     localStorage.setItem('apt', JSON.stringify(apt));
-
-    console.log('apt updated');
 }
 
 // block = {

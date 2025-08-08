@@ -12,8 +12,6 @@ evtList.addEventListener("click", (event) => {
     if(event.target.getAttribute('class') == 'del-btn') return;
 
     let evtId = event.target.closest('.event-container').getAttribute("id");
-
-    console.log(`Id from aLL: ${evtId}`);
     
     window.parent.postMessage({ action: "ShowEvtFromAll", evtId }, "*");
 });
@@ -25,10 +23,7 @@ delBtns.forEach(btn =>
         if(event.target.getAttribute('class') != 'del-btn') return;
         if(event.target.getAttribute('id') == 'all-event-list') return;
 
-        console.log(event.target);
-
         let evtId = event.target.closest('.event-container').getAttribute("id");
-        console.log(evtId);
 
         await deleteEvent(block.id, apt.id, evtId);
 

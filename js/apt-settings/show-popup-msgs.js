@@ -7,7 +7,6 @@ export function showChangeBlockPassPopup(){
 }
 
 window.addEventListener("message", (event) => {
-    console.log('sth');
     
     if (event.data.action === "showChangeAptNamePopup") {
         let popup = document.getElementById("change-name");
